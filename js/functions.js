@@ -18,14 +18,14 @@ sayHello(' Sam');
  *
  * console.log 'helloMessage' to check your work
  */
-var helloMessage = sayHello ('Cory');
+var helloMessage = sayHello (' Cory');
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = 'Cory';
+var myName = ' Cory';
 sayHello (myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -37,7 +37,6 @@ var random = Math.floor((Math.random() * 3) + 1);
  * Create a function called 'isTwo' that takes a number as a parameter.
  * The function should return a boolean value based on whether or not the passed
  * number is the number 2.
- *
  * Example
  * > isTwo(1) // returns false
  * > isTwo(2) // returns true
@@ -49,7 +48,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo (num) {
+   return num === 2;
+} console.log(isTwo(3))
 
+isTwo (random);
+console.log(isTwo(random))
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
