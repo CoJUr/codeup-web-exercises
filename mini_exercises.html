@@ -17,9 +17,16 @@ function isFive(input) {
     return input == 5
 }
     // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
-
+function isShortWord(str) {
+    return str.length < 5;
+}
+console.log(isShortWord('sandwhich'), false)
+console.log(isShortWord('four'), true)
     // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
-
+function isSameLength(string, str) {
+    return string.length === str.length
+    }
+console.log(isSameLength('bear', 'griaffe'))
     // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
 
     // example input: getSmallerSegment("Codeup", 3)
