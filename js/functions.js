@@ -1,5 +1,5 @@
 "use strict";
-
+(function() {
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -101,3 +101,5 @@ function applyDiscount (num, discount) {
 console.log(applyDiscount(50, 0.50))
 console.log(applyDiscount(100, 0.20))
 console.log(applyDiscount(100, 0.30))
+
+   })();
