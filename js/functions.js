@@ -76,9 +76,9 @@ console.log(calculateTip(0.15, 100));
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var enteredGratuity = prompt('Please enter desired gratuity expressed as a number between 0.0 and 1.0')
-var enteredBill = prompt('Please enter bill amount before tip')
-var amountToTip = calculateTip(enteredGratuity, enteredBill)
+var enteredGratuity = parseFloat(prompt('Please enter desired gratuity expressed as a number between 0.0 and 1.0'))
+var enteredBill = parseFloat(prompt('Please enter bill amount before tip'))
+var amountToTip = parseFloat(calculateTip(enteredGratuity, enteredBill))
 alert("You should tip " + amountToTip +  " dollars")
 /**
  * TODO:
