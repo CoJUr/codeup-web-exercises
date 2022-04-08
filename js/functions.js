@@ -50,10 +50,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 function isTwo (num) {
    return num === 2;
-} console.log(isTwo(3))
+} console.log(isTwo(3));
 
 isTwo (random);
-console.log(isTwo(random))
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -77,9 +77,9 @@ console.log(calculateTip(0.15, 100));
  * then display the dollar amount they should tip
  */
 var enteredGratuity = parseFloat(prompt('Please enter desired gratuity expressed as a number between 0.0 and 1.0'))
-var enteredBill = parseFloat(prompt('Please enter bill amount before tip'))
-var amountToTip = parseFloat(calculateTip(enteredGratuity, enteredBill))
-alert("You should tip " + amountToTip +  " dollars")
+var enteredBill = parseFloat(prompt('Please enter bill amount before tip'));
+var amountToTip = parseFloat(calculateTip(enteredGratuity, enteredBill));
+alert("You should tip " + amountToTip +  " dollars");
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -98,8 +98,8 @@ function applyDiscount (num, discount) {
    var discountedPrice = num - (num * discount);
    return discountedPrice;
 }
-console.log(applyDiscount(50, 0.50))
-console.log(applyDiscount(100, 0.20))
-console.log(applyDiscount(100, 0.30))
+console.log(applyDiscount(50, 0.50));
+console.log(applyDiscount(100, 0.20));
+console.log(applyDiscount(100, 0.30));
 
    })();
