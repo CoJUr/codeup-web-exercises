@@ -95,6 +95,9 @@ alert("You should tip " + amountToTip +  " dollars")
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount (num, discount) {
-   return num * discount;
+   var discountedPrice = num - (num * discount);
+   return discountedPrice;
 }
 console.log(applyDiscount(50, 0.50))
+console.log(applyDiscount(100, 0.20))
+console.log(applyDiscount(100, 0.30))
