@@ -1,5 +1,5 @@
 "use strict";
-
+(function(){
 /* ########################################################################## */
 
 /**
@@ -32,10 +32,10 @@ function analyzeColor(namedColor) {
         return 'its one of the other colors'
     }
 }
-console.log(analyzeColor('yellow'))
-console.log(analyzeColor('blue'))
-console.log(analyzeColor('yellow'))
-console.log(analyzeColor('brown'))
+// console.log(analyzeColor('yellow'))
+// console.log(analyzeColor('blue'))
+// console.log(analyzeColor('yellow'))
+// console.log(analyzeColor('brown'))
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -49,7 +49,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
+// analyzeColor(randomColor);
+// console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
@@ -113,3 +114,5 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+}());
