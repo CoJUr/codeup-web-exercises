@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Loops Mini Exercises page</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    (function () { // IIFE
+
+        // Code goes here!
+
+        // TODO: Create these While Loops
+
+
+        // 1.   Create a while loop that counts to 10 by 2’s
+        //      A. It will increment the count by 2 for each loop
+        //      B. It will log the value of count to the console on each loop.
+
+        // var count = 0;
+
+        // while (???) {
+        //     //your logic
+        // }
+var countToTen = 0
+        while (countToTen < 10) {
+            countToTen += 2;
+            console.log(countToTen);
+        }
+
+        // 2.   Create a while loop that runs until isComplete is equal to true
+        //      A. isComplete should be changed to false after the 20th iteration of the loop.
+        //      B. You will need to create a variable to track your loops progress  (incrementor)
+        //      C. Log each iteration and the value of isComplete
+
+        var isComplete = true;
+        var i = 0
+
+        while(isComplete) {
+            console.log("current count is " + i + " and 'isComplete is' " + isComplete)
+            i++;
+            if (i === 20) isComplete = false;
+            console.log(isComplete + " now is the value of 'isComplete'")
+        }
+
+
+
+
+
+        // TODO: Do-While Loops
+
+
+        //  1.  Create a do-while loop that counts to 10 by 2’s
+        //      A. It will increment the count by 2 for each loop
+        //      B. It will log the value of count to the console on each loop.
+
+        var incrementor = 0;
+
+        do {
+            console.log("the count is now " + incrementor);
+            incrementor += 2;
+        } while(incrementor < 10);
+        console.log("the count is now complete at " + incrementor)
+
+
+        // 2.   Create a do-while loop that console logs the number if it's odd.
+        //      A. Create a variable called number and increment it by one on each run of the loop.
+        //      B. Only print out the value if it's odd.
+        //      C. End the loop when the number reaches 50.
+
+var number = 0
+        do {
+            number++;
+            if (number % 2 === 1) {
+                console.log("we found an odd number: " + number)
+            }
+        } while (number < 50);
+
+
+
+        // TODO: For LOOPs
+
+        // 1.   Create a for loop that goes to 100 from 0.
+        //      A. It will print out the number if it's even.
+        //      B. It will print out the number if it's divisible by five evenly.
+        //      C. If it's both A and B then it should print out the string "BOTH" instead of the number for that iteration.
+
+        for (var i = 0; i < 100; i++) {
+        if (i % 2 === 0) {
+            console.log('Heres an even number' + i);
+        }
+            if (i % 5 === 0) {
+                console.log("This ones divisible by 5 " + i);
+            }
+            if ((i % 5 === 0) && (i % 2 === 0)) {
+                console.log("both at the same time", i);
+            }
+        }
+
+
+
+        // 2. Create a for loop that runs 50 times with an increment variable starting at zero.
+        //     A. Create a variable called total to store the total value of the incrementer.
+        //     B. Log the current total  on each loop.
+        //     C. Log the sum of all the incrementer values (0+1+2+3….) after the loop has completed.
+
+        var total = 0
+for (var i = 0; i < 50; i++){
+    total += i;
+    console.log("subtotal:", total, "incrementer:", i);
+}
+console.log("total:", total)
+
+    })();
+
+</script>
+
+</html>

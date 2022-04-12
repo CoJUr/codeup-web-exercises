@@ -44,6 +44,7 @@ function analyzeColor(namedColor) {
 //                  will contain a different color every time the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
@@ -56,12 +57,32 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
+var refactoredAnalyzeColor = "color"
+    switch (refactoredAnalyzeColor) {
+        case "blue":
+            console.log('the color of the ocean');
+            break;
+        case "red":
+            console.log('more red than anger')
+            break;
+        case "orange":
+            console.log("the Sun is orange")
+            break;
+        default:
+            console.log("it's some other color for goodness sake")
+            break;
+    }
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var colorPreference = prompt('What is your favorite color?');
+
+alert("Oh really? " + analyzeColor(colorPreference) + "!")
 
 /* ########################################################################## */
 
