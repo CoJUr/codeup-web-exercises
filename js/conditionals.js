@@ -105,6 +105,32 @@ alert("Oh really? " + analyzeColor(colorPreference) + "!")
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+let discount = 1
+function calculateTotal(luckynum, total) {
+    if (luckynum === 0) {
+        let discount = 1;
+        return console.log("Sorry no discount, you have to pay: " + discount * total)
+    } else if (luckynum === 1) {
+        let discount = 0.9;
+        return console.log("With 10% off you only pay: " + discount * total)
+    } else if (luckynum === 2) {
+        let discount = 0.75;
+        return console.log("with your 25% off you only pay: " + discount * total)
+    } else if (luckynum === 3) {
+        let discount = 0.65;
+        return console.log("with your 35% off you only pay: " + discount * total)
+    } else if (luckynum === 4) {
+        let discount = 0.50;
+        return console.log("Wow, half off!! Just pay: " + discount * total)
+    } else if (luckynum === 5) {
+        let discount = 0.0;
+        return console.log("Jackpot! You owe us: " + (discount * total) + " gratz!")
+    }
+
+}
+    console.log(calculateTotal(1, 200))
+    console.log(calculateTotal(2, 500))
+    console.log(calculateTotal(5, 400))
 
 /**
  * TODO:
