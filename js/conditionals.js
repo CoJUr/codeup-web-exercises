@@ -79,10 +79,10 @@ var refactoredAnalyzeColor = "color"
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
-var colorPreference = prompt('What is your favorite color?');
-
-alert("Oh really? " + analyzeColor(colorPreference) + "!")
+//
+// var colorPreference = prompt('What is your favorite color?');
+//
+// alert("Oh really? " + analyzeColor(colorPreference) + "!")
 
 /* ########################################################################## */
 
@@ -141,7 +141,12 @@ function calculateTotal(luckynum, total) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var enteredBill = prompt("please enter your total bill")
+calculateTotal(luckyNumber, enteredBill)
+    alert("your lucky number was: " + luckyNumber + " and your bill before discount was: "
+        + enteredBill + " , so your final amount due is: "
+        + console.log(calculateTotal(enteredBill, luckyNumber)))
 
 /**
  * TODO:
