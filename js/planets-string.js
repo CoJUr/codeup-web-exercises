@@ -25,7 +25,7 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-var unorderedStringStepOne = planetsArray.join("<li>");
+var unorderedStringStepOne = planetsArray.join("<li>" + "</li>");
 var unorderedStringStepTwo = "<ul>" + unorderedStringStepOne + "</ul>"
 
     console.log(unorderedStringStepTwo)
