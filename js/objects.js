@@ -90,6 +90,8 @@ for (var i = 0; i < shoppers.length; i++) {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+
     var books = [
         {
             title: "Man",
@@ -106,17 +108,17 @@ for (var i = 0; i < shoppers.length; i++) {
             }
         },
         {
-            title: "Seeing",
+            title: "See me",
             author: {
                 firstName: "John",
-                lastName: "Cena"
+                lastName: "Seena"
             }
         },
         {
-            title: "Slams",
+            title: "Cookin'",
             author: {
-                firstName: "Rick",
-                lastName: "The Brick"
+                firstName: "Dwayne",
+                lastName: "Johnsuns"
             }
         },
         {
@@ -127,6 +129,12 @@ for (var i = 0; i < shoppers.length; i++) {
             }
         }
     ];
+
+    books.forEach(function(book, index) {
+        console.log('Book # ' + (index + 1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
+    });
 
     /**
      * TODO:
@@ -152,11 +160,8 @@ for (var i = 0; i < shoppers.length; i++) {
      *      ---
      *      ...
      */
-books.forEach(function(book, index) {
-    console.log('book # ' + (index + 1));
-    console.log('title: # ' + book.title);
-    console.log('author: ' + book.author.firstName + ' ' + book.author.lastName);
-});
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
