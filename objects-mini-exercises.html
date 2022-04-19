@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Create a few beverage objects and assign values to each object for the following properties:-->
+
+<!-- - brandName-->
+<!-- - type-->
+<!-- - volumeInLiters-->
+<!-- - priceInCents-->
+<!-- - expirationDate-->
+<!-- - datesOfPreviousSips (use an array of strings)-->
+<!-- - isOpen-->
+
+<!--Define your objects using both literal syntax to create all properties and values -->
+<!--at once and also try defining empty objects and assign property values in separate -->
+<!--statements using the dot notation.-->
+
+
+
+var beverage1 = {
+brandName: 'Fanta',
+type: 'diet',
+volumeInLiters: 2
+priceInCents: 250
+expirationDate: 5/5/2025
+datesOfPreviousSips: ['4/4/2020', '5/5/2020', '6/6/2020']
+isOpen: 'Yes'
+};
+
+var beverage1 = {};
+
+beverage1.brandName = 'Fanta';
+beverage1.type = 'diet';
+beverage1.volumeInLiters = 2;
+beverage1.priceInCents = 250;
+beverage1.expirationDate = 5/5/2025
+beverage1.datesOfPreviousSips ['4/4/2020', '5/5/2020', '6/6/2020']
+beverage1.isOpen = 'Yes'
+
+
+var beverage2 = {
+brandName: 'Pepsi',
+type: 'diet',
+volumeInLiters: 2
+priceInCents: 250
+expirationDate: 5-5-2025
+datesOfPreviousSips: ['4-4-2020', '5-5-2020', '6-6-2020']
+isOpen: 'Yes'
+};
+
+// var beverage2 = {};
+
+// beverage2.brandName = 'Pepsi';
+// beverage2.type: = 'diet';
+// beverage2.volumeInLiters = 2;
+// beverage2.priceInCents = 250;
+// beverage2.expirationDate = 5-5-2025
+// beverage2.datesOfPreviousSips: ['4-4-2020', '5-5-2020', '6-6-2020']
+// beverage2.isOpen = 'Yes'
+
+var beverage3 = {
+brandName: 'Sprite',
+type: 'diet',
+volumeInLiters: 2
+priceInCents: 250
+expirationDate: 5_5_2025
+datesOfPreviousSips: ['4_4_2020', '5_5_2020', '6_6_2020']
+isOpen: 'Yes'
+};
+
+// var beverage3 = {};
+//
+// beverage3.brandName = 'Sprite';
+// beverage3.type: = 'diet';
+// beverage3.volumeInLiters = 2;
+// beverage3.priceInCents = 250;
+// beverage3.expirationDate = 5_5_2025
+// beverage3.datesOfPreviousSips: ['4_4_2020', '5_5_2020', '6_6_2020']
+// beverage3.isOpen = 'Yes'
+
+
+
+
+
+-- Mini Exercise 2
+
+var users = [
+{
+givenName: 'Sam',
+age: 21
+},
+{
+givenName: 'Cathy',
+age: 34
+},
+{
+givenName: 'Karen',
+age: 43
+}
+];
+
+1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+
+let capturedUsers = ''
+users.forEach(function(user) {
+    capturedUsers += user.givenName + " "
+});
+console.log(capturedUsers.trim());
+
+for (var i = 0; i < users.length; i += 1) {
+console.log(users[i].givenName + " ");
+}
+
+var output = []
+users.forEach(function)(user) {
+output.push(user.givenName);
+})
+console.log(outpt.join(' '));
+
+console.log(users[0].givenName + " " + users[1].givenName + " " + users[2].givenName)
+
+        2. Change the names of all users to "John Doe"
+
+        users.forEach(function(users) {
+            users.givenName = 'John Doe';
+        });
+            console.log(users);
+
+3. Increase the current age of all users by 1
+
+users[0].age = users[0].age + 1
+users[1].age = users[1].age + 1
+users[2].age = users[2].age + 1
+
+
+
+            users.forEach(function(user) {
+        console.log(user.age);
+        })
+
+Can you accomplish each step using iteration?
+
+                                    3.) for (var i = 0; i < users.length; i++) {
+                                    users[i].age += 1 }
+
+                                    users.forEach(function(user) {
+                                    user.age += 1;
+                                    });
+
+</body>
+</html>
