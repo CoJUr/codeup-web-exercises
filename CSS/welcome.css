@@ -1,4 +1,58 @@
+/*class selector*/
 .fancy-header {
     color: blue;
     text-decoration: underline;
 }
+
+
+/*id selector*/
+#main-title {
+    text-decoration: none;
+}
+
+/*element selector*/
+h2 {
+    font-size: 50px;
+}
+
+/*!*multiple selectors, can mix-match elements, classes, etc*!*/
+/*li, h4, .fancy-header, span {*/
+/*    background-color: yellow;*/
+/*}*/
+
+/*combining classes. h1 elements with class of blue text get this modifier */
+h1.blue-text {
+    color: blue;
+}
+
+/*targeting section element's child elements*/
+main section {
+    font-family: "American Typewriter";
+}
+/* any descendent of a section element WITH CLASS of a.typewriter gets this applied*/
+section .a-typewriter {
+    font-family: "Al Nile";
+}
+
+
+/* direct child. all p elements which are direct children of the list class get bold */
+.list > p {
+    font-weight: bold;
+}
+
+/* pseudo classes. selector:pseudo-class syntax. usually the selector is an anchor because anchors have 'states'.
+ */
+/*anchor tag with link-to-page id targeted */
+#link-to-page:link {
+    text-decoration: none;
+}
+#link-to-page:visited {
+    color: #7cb342;
+}
+#link-to-page:hover {
+    background-color: black;
+}
+#link-to-page:active {
+    font-size: 50px
+}
+

@@ -2,3 +2,54 @@
     color: purple;
     text-decoration: underline;
 }
+h1#main-title {
+    text-align: center;
+}
+
+h1 {
+    color: magenta;
+    text-decoration: underline;
+}
+h1.fancy-header {
+    color: magenta;
+    text-decoration: underline;
+}
+h3.fancy-header {
+    color: magenta;
+    text-decoration: underline;
+}
+body {
+    background-color: royalblue;
+}
+body {
+    background-image: url("https://i.ytimg.com/vi/ZcmbktuGz8c/maxresdefault.jpg");
+    background-position: right;
+    background-size: 450px;
+}
+ul {
+    list-style: lower-greek;
+}
+body {
+    font-family: cursive;;
+}
+tr, td {
+    padding: 5px;
+    font-size: x-large;
+}
+
+a:link {
+    float:right;
+}
+a:visited {
+    float:right;
+    color: magenta;
+    font-stretch: extra-expanded;
+}
+a:hover {
+    float:left;
+    text-transform: full-size-kana;
+}
+a:active {
+    float:right;
+    font-size: xx-large;
+}
