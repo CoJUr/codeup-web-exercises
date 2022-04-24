@@ -109,8 +109,8 @@
      */
 
 
-    let luckynum = prompt("please enter your assigned lucky number")
-    let totalBill = prompt("please enter your total amount due in USD")
+    // let luckynum = prompt("please enter your assigned lucky number")
+    // let totalBill = prompt("please enter your total amount due in USD")
 
     function calculateTotal(luckynum, totalBill) {
         let discount = 0
@@ -133,12 +133,13 @@
             let discount = 0;
             alert("Jackpot! You owe us: " + (discount * totalBill) + " congratulations!")
         }
+
     }
 
-
-    console.log(calculateTotal(luckynum,totalBill))
+    // console.log(calculateTotal(luckynum,totalBill))
     // console.log(calculateTotal(2, 500))
     // console.log(calculateTotal(5, 400))
+
 
     /**
      * TODO:
@@ -149,19 +150,66 @@
      * price before the discount was, and what their price after the discount is.
      */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var enteredBill = prompt("please enter your total bill")
-// calculateTotal(luckyNumber, enteredBill)
-//     alert("your lucky number was: " + luckyNumber + " and your bill before discount was: "
-//         + enteredBill + " , so your final amount due is: "
-//         + console.log(calculateTotal(enteredBill, luckyNumber)))
+var luckyNumber = Math.floor(Math.random() * 6);
+// var randomDiscount = 0
+var enteredBill = prompt("please enter your total bill before discount")
+//     switch (luckyNumber) {
+//         case "0":
+//         case "1":
+//         randomDiscount = 1;
+//         alert("Sorry, you rolled a " + luckyNumber + "which means no discount, you have to pay: " + enteredBill);
+//         break;
+//         case "2":
+//         randomDiscount = .75;
+//         alert("you rolled a " + luckyNumber + "which is a 25% discount! With your pre-discount bill of " + enteredBill +
+//             " you now only owe " + (randomDiscount * enteredBill));
+//         break;
+//         case "3":
+//         randomDiscount = .65;
+//         alert("you rolled a " + luckyNumber + "which is a 35% discount! With your pre-discount bill of " + enteredBill +
+//             " you now only owe " + (randomDiscount * enteredBill));
+//         break;
+//         case "4":
+//         randomDiscount = .5;
+//         alert("you rolled a " + luckyNumber + "which is a 50% discount! With your pre-discount bill of " + enteredBill +
+//             " you now only owe " + (randomDiscount * enteredBill));
+//         break;
+//         case "5":
+//         randomDiscount = 0;
+//         alert("you rolled a " + luckyNumber + "which is a 100% discount!! With your pre-discount bill of " + enteredBill +
+//             " you owe exactly " + (randomDiscount * enteredBill) + ' ! Yes, that is 0 dollars!');
+//         break;
 //
+//     }
+//
+//     var calculateTotalAgain = calculateTotal()
+//
+//     calculateTotalAgain(luckyNumber, enteredBill) {
+//         alert("your lucky number was: " + luckyNumber + " and your bill before discount was: "
+//             + enteredBill + " , so your final amount due is: "
+//             + (enteredBill * discount))
+//     }
+
 // /**
 //  * TODO:
 //  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
 //  * would like to enter a number. If they click 'Ok', prompt the user for a
 //  * number, then use 3 separate alerts to tell the user:
 //  *
+    var userAgreed = confirm("Hello, would you like to enter a number?")
+    if (userAgreed) {
+        alert("ok great, lets begin");
+        let theNumber = prompt("please enter a number")
+        if (typeof theNumber !== "number") {
+            alert("that is not a number")
+        } else if (typeof theNumber === "number") {
+            alert("if we add 100 to that we get: " + (theNumber + 100))
+        }
+    } else {
+        alert("I'll leave you be, then")
+    }
+
+
 //  * - whether the number is even or odd
 //  * - what the number plus 100 is
 //  * - if the number is negative or positive
