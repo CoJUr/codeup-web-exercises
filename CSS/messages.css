@@ -7,31 +7,37 @@ body, html {
 }
 
 .message-info {
-    background-color: #748fe5;
+    background-color: #ccdeff;
     color: #0f0fec;
-    margin-bottom: 10px;
+    margin: 10px;
     padding: 5px 50px 5px 5px
-
+    border-radius: 5px;
+    border: 1px solid lightgrey;
 }
 
 .message-success {
-    background-color: #a5f1a5;
+    background-color: #cff3da;
     color: green;
-    margin-bottom: 10px;
+    margin: 10px;
     padding: 5px 50px 5px 5px
+    border-radius: 5px;
+    border: 1px solid lightgrey;
 }
 
 .message-warning {
-    background-color: #eaea67;
-    color: #e3ad80;
-    margin-bottom: 10px;
+    background-color: #fcfbc9;
+    color: #8a7610;
+    margin: 10px;
     padding: 5px 50px 5px 5px
+    border-radius: 5px;
+    border: 1px solid lightgrey;
 }
 
 .message-error {
-    background-color: #e3b5be;
+    background-color: #fad2d6;
     color: #c40e75;
-    margin-bottom: 10px;
+    margin: 10px;
     padding: 5px 50px 5px 5px
-
+    border-radius: 5px;
+    border: 1px solid lightgrey;
 }
