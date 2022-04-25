@@ -112,28 +112,61 @@
     // let luckynum = prompt("please enter your assigned lucky number")
     // let totalBill = prompt("please enter your total amount due in USD")
 
-    function calculateTotal(luckynum, totalBill) {
-        let discount = 0
-        if (luckynum == 0) {
-            let discount = 1;
-            alert("Sorry no discount, you have to pay: " + (discount * totalBill))
-        } else if (luckynum == 1) {
-            let discount = .9;
-            alert("With 10% off you only pay: " + (discount * totalBill))
-        } else if (luckynum == 2) {
-            let discount = .75;
-            alert("with your 25% off you only pay: " + (discount * totalBill))
-        } else if (luckynum == 3) {
-            let discount = .65;
-            alert("with your 35% off you only pay: " + (discount * totalBill))
-        } else if (luckynum == 4) {
-            let discount = .50;
-            alert("Wow, half off!! Just pay: " + (discount * totalBill))
-        } else if (luckynum == 5) {
-            let discount = 0;
-            alert("Jackpot! You owe us: " + (discount * totalBill) + " congratulations!")
-        }
+    function calculateTotal(luckyNumber, enteredBill) {
+        // let discount = 0
+        // if (luckynum == 0) {
+        //     let discount = 1;
+        //     alert("Sorry no discount, you have to pay: " + (discount * totalBill))
+        // } else if (luckynum == 1) {
+        //     let discount = .9;
+        //     alert("With 10% off you only pay: " + (discount * totalBill))
+        // } else if (luckynum == 2) {
+        //     let discount = .75;
+        //     alert("with your 25% off you only pay: " + (discount * totalBill))
+        // } else if (luckynum == 3) {
+        //     let discount = .65;
+        //     alert("with your 35% off you only pay: " + (discount * totalBill))
+        // } else if (luckynum == 4) {
+        //     let discount = .50;
+        //     alert("Wow, half off!! Just pay: " + (discount * totalBill))
+        // } else if (luckynum == 5) {
+        //     let discount = 0;
+        //     alert("Jackpot! You owe us: " + (discount * totalBill) + " congratulations!")
+        // }
+        var randomDiscount = 0
 
+        switch (luckyNumber) {
+            case 0:
+                randomDiscount = 1
+            case 1:
+                alert("Sorry, you rolled a " + luckyNumber + " which means a no discount, so your previous amount of " + (enteredBill) +
+                    " is honored. Please pay: " + (randomDiscount * enteredBill));
+                randomDiscount = .9;
+                alert("you rolled a " + luckyNumber + "which means a 10% discount, your previous amount of " + (enteredBill) +
+                " comes out to a discounted amount of: "+ (randomDiscount * enteredBill));
+                break;
+            case 2:
+                randomDiscount = .75;
+                alert("you rolled a " + luckyNumber + "which is a 25% discount! With your pre-discount bill of " + enteredBill +
+                    " you now only owe " + (randomDiscount * enteredBill));
+                break;
+            case 3:
+                randomDiscount = .65;
+                alert("you rolled a " + luckyNumber + "which is a 35% discount! With your pre-discount bill of " + enteredBill +
+                    " you now only owe " + (randomDiscount * enteredBill));
+                break;
+            case 4:
+                randomDiscount = .5;
+                alert("you rolled a " + luckyNumber + "which is a 50% discount! With your pre-discount bill of " + enteredBill +
+                    " you now only owe " + (randomDiscount * enteredBill));
+                break;
+            case 5:
+                randomDiscount = 0;
+                alert("you rolled a " + luckyNumber + "which is a 100% discount!! With your pre-discount bill of " + enteredBill +
+                    " you owe exactly " + (randomDiscount * enteredBill) + ' ! Yes, that is 0 dollars!');
+                break;
+
+        }
     }
 
     // console.log(calculateTotal(luckynum,totalBill))
@@ -150,37 +183,39 @@
      * price before the discount was, and what their price after the discount is.
      */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-// var randomDiscount = 0
 var enteredBill = prompt("please enter your total bill before discount")
+var luckyNumber = Math.floor(Math.random() * 6);
+calculateTotal(luckyNumber, enteredBill)
+// var randomDiscount = 0
+// var enteredBill = prompt("please enter your total bill before discount")
 //     switch (luckyNumber) {
-//         case "0":
-//         case "1":
+//         case 0:
+//         case 1:
 //         randomDiscount = 1;
 //         alert("Sorry, you rolled a " + luckyNumber + "which means no discount, you have to pay: " + enteredBill);
 //         break;
-//         case "2":
+//         case 2:
 //         randomDiscount = .75;
 //         alert("you rolled a " + luckyNumber + "which is a 25% discount! With your pre-discount bill of " + enteredBill +
 //             " you now only owe " + (randomDiscount * enteredBill));
 //         break;
-//         case "3":
+//         case 3:
 //         randomDiscount = .65;
 //         alert("you rolled a " + luckyNumber + "which is a 35% discount! With your pre-discount bill of " + enteredBill +
 //             " you now only owe " + (randomDiscount * enteredBill));
 //         break;
-//         case "4":
+//         case 4:
 //         randomDiscount = .5;
 //         alert("you rolled a " + luckyNumber + "which is a 50% discount! With your pre-discount bill of " + enteredBill +
 //             " you now only owe " + (randomDiscount * enteredBill));
 //         break;
-//         case "5":
+//         case 5:
 //         randomDiscount = 0;
 //         alert("you rolled a " + luckyNumber + "which is a 100% discount!! With your pre-discount bill of " + enteredBill +
 //             " you owe exactly " + (randomDiscount * enteredBill) + ' ! Yes, that is 0 dollars!');
 //         break;
-//
-//     }
+
+    // }
 //
 //     var calculateTotalAgain = calculateTotal()
 //
