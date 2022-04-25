@@ -33,7 +33,7 @@ fieldset {
     /* The element with this class should be 80% of the width and it must be centered */
     width: 80%;
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .form-group {
@@ -74,9 +74,9 @@ fieldset {
     margin-bottom: .5em;
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
-    width: calc(100% - 30px);
+    width: calc(100% - 4px);
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: 100%;
+
 }
 
 
