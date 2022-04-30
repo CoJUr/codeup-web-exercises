@@ -9,7 +9,6 @@ body {
     background-color: #fafafa;
 }
 
-
 h1 {
     font-size: 20px;
 }
@@ -85,3 +84,55 @@ main {
 
 
 /* TODO: (TOGETHER) Implement common breakpoints and apply styling to components */
+
+@media screen and (min-width: 576px) {
+    .card {
+        width: 50%;
+    }
+
+    .link-group {
+        width: 50%;
+    }
+
+    .link-group:nth-of-type(2) {
+        display: flex;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .h1 {
+        font-size: 34px;
+    }
+
+    .h2 {
+        font-size: 22px;
+
+    }
+    .card {
+        width: 33%;
+    }
+
+    .link-group {
+        width: 33%;
+    }
+
+    .link-group:nth-of-type(3) {
+        display: flex;
+    }
+
+}
+
+
+@media screen and (min-width: 996px) {
+    .card {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card {
+        width: 20%;
+    }
+}
+
