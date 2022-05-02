@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/1df2afb419.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Bootstrap - order pizza</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,7 +34,8 @@
 
                     </ul>
                     <div class="nav-item">
-                        <a class="nav-link disabled ">Sign Up</a>
+
+                        <i class="fa-solid fa-user">Sign UP</i>
                     </div>
                 </div>
             </div>
@@ -43,47 +45,71 @@
         <h1 class="display-3 bg-light .d-sm-none .d-md-block text-center bg-opacity-75">Welcome to Pizza World!</h1>
     </div>
     <h2 class="mx-2 " >Build your own pizza</h2>
-    <div class="container m-1 p-1 border border-2 border-secondary">
-        <form>
-            <h5 class="card-title bg-primary text-white mx-0 ">Choose Size and Crust</h5>
-            <div class="mb-2">
-                <div class="form-check">
-                    <div class="container-fluid px-0 my-2">Hand Tossed</div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Small (10")
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Medium (12")
-                    </label>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="form-check">
-                    <div class="container-fluid px-0 my-2">Crispy Thin</div>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3">
-                    <label class="form-check-label" for="flexRadioDefault3">
-                        Medium (12")
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault4">
-                    <label class="form-check-label" for="flexRadioDefault4">
-                        Large (14")
-                    </label>
-                </div>
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
+
+
             <div class="card-footer text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary ms-5">Next Step</button>
             </div>
         </form>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item container-fluid" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Size and Crust</button>
+                <div class="container-fluid m-1 p-1 border border-2 border-secondary">
+                    <form>
+                        <h5 class="card-title bg-primary text-white mx-0 ">Choose Size and Crust</h5>
+                        <div class="mb-2">
+                            <div class="form-check container-fluid border border-1">
+                                <div class="container-fluid px-0 my-2">Hand Tossed</div>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Small (10")
+                                </label>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Medium (12")
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check container-fluid border">
+                                <div class="container-fluid px-0 my-2">Crispy Thin</div>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Medium (12")
+                                </label>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault4">
+                                    <label class="form-check-label" for="flexRadioDefault4">
+                                        Large (14")
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-primary ms-5">Next Step</button>
+                        </div>
+                    </form>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Toppings</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+
+
     </div>
 
 
