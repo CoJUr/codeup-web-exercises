@@ -11,32 +11,39 @@
 
 <script>
 (function() {
-    "use strict";
+        "use strict";
 
-    var detonationTimer = 5;
-    var interval = 1000
+        var detonationTimer = 5;
+        var interval = 1000
 
-    // TODO: This function needs to be called once every second
-    var stopBOM = setInterval(function updateTimer() {
-        if (detonationTimer == 0) {
-            alert('EXTERMINATE!');
-            document.body.innerHTML = '';
-        } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
+        // TODO: This function needs to be called once every second
+        var stopBOM = setInterval(function updateTimer() {
+            if (detonationTimer == 0) {
+                alert('EXTERMINATE!');
+                document.body.innerHTML = '';
+            } else if (detonationTimer > 0) {
+                document.getElementById('timer').innerHTML = detonationTimer;
+            }
+
+            detonationTimer--;
+        }, interval);
+
+        //walkthru:
+        //var detonationTimer = 5;
+        // function updateTimer() {....}
+        //setInterval(updateTimer, 1000)
+
+        // TODO: When this function runs, it needs to
+        // cancel the interval/timeout for updateTimer()
+
+
+        function defuseTheBOM() {
+            if (defuser) {
+                clearInterval(stopBOM)
+            }
         }
 
-        detonationTimer--;
-    }, interval);
 
-    // TODO: When this function runs, it needs to
-    // cancel the interval/timeout for updateTimer()
-
-
-    function defuseTheBOM() {
-    if (defuser) {
-        clearInterval(stopBOM)
-    }
-    }
 
     // Don't modify anything below this line!
     //
