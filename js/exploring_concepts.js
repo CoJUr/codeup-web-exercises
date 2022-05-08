@@ -18,3 +18,29 @@ const greetings = (name) => {
     return `Konichi-wah ${name}!`;
 }
 console.log(greetings`Jane`);
+
+
+
+//combine two string literals into one
+let old = `Superman`;
+let latest = `Spiderman`;
+let movies = `${old}, ${latest}`;
+
+console.log(movies);  //prints:    Superman, Spiderman
+
+
+let ticketPrice = 500;
+let persons = 5;
+
+let total = `Total cost: ${ticketPrice * persons}`;
+console.log(total); // prints   Total cost: 2500
+
+
+
+//call a function with a string literal argument again
+const likedBy = person => {
+    return `Movie liked by: ${person}`;
+}
+console.log(likedBy`Hellen`);  //prints    Movie liked by: Hellen
+
+//=================================== js classes
