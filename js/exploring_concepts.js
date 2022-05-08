@@ -124,3 +124,111 @@ var bag = new Inventory(10);
 bag.increase(5);
 console.log(bag);
 
+
+//===============================
+//over-ride superclass methods with subclass methods. give it the same name and any params
+// as the method of the superclass.
+class Human {
+    constructor(weapon) {
+        this.weapon = weapon;
+        this.health = 100;
+    }
+    receiveDamage() {
+        this.health = this.health - 10;
+    }
+}
+
+class Wizard extends Human {
+    receiveDamage() {
+        this.health = this.health - 5;
+    }
+}
+
+var wizard = new Wizard("staff");
+console.log(wizard.health);
+wizard.receiveDamage();
+console.log(wizard.health)
+
+//if want the behavior of the superclass method, can code super keyword(/method?)
+// followed by the method of superclass into code block of subclass' version
+class Human {
+    constructor(weapon) {
+    }
+    attack() {
+        console.log("Swing " + this.weapon)
+    }
+}
+
+class Wizard extends Human {
+    attack() {
+        super.attack();
+        // can add additional subclass attack behavior here if desired. cast a spell after the attack.
+        console.log("fireball!");
+    }
+}
+var wizard = new Wizard("staff");
+wizard.attack();
+
+//==========Paradigms===============
+//one style/"paradigm" known as functional programming (FP), uses a lot of functions and variables.
+// aka what we've been doing so far. Functions return new values, and those values are used elsewhere.
+function getDistance(mph, h) {
+    return mph * h;
+}
+
+var mph = 60;
+var h = 2;
+
+var distance = getDistance(mph, h);
+console.log(distance) // prints 120
+
+//another paradigm is called object-oriented programming (OOP). Group data and functionality as properties and
+//methods inside objects.
+//         var dog = {
+//             hungry: true,
+//             eat: function() {}
+//         }
+   // in OOP, use methods to update properties of object, instead of getting new return value
+    var dog = {
+        hungry: true,
+        eat: function() {
+            dog.hungry = false;
+        }
+    }
+    dog.eat();
+    console.log(dog.hungry) //prints   false
+
+var car = {
+    mileage: 12000,
+    drive: function(miles) {
+            car.mileage += miles;
+        }
+}
+
+car.drive(100);
+    console.log(car.mileage)  // prints   12100
+
+//fp vs oop example: virtual piggy bank. oop wins.
+
+function addMoney(value, amount) {
+        return value + amount;
+}
+
+var value = 0;
+
+var value = addMoney(value, 100);
+value = addMoney(value, 50);
+value = addMoney(value, 22)
+
+console.log(value) // prints 172
+
+//now with OOP
+var myPiggy = {
+    value : 0,
+    addMoney: function (amount) {
+        myPiggy.value = myPiggy.value + amount;
+    }
+};
+
+myPiggy.addMoney(100);
+console.log(myPiggy.value); // updated amount of 100 prints
