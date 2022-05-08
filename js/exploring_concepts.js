@@ -232,3 +232,144 @@ var myPiggy = {
 
 myPiggy.addMoney(100);
 console.log(myPiggy.value); // updated amount of 100 prints
+
+// oop > fp
+var rectangle = {
+    base: 3,
+    height: 4,
+    getArea: function() {
+        return this.base * this.height;
+    }
+};
+
+rectangle.base = 10 // updating base value for easy re-use of below function
+var area = rectangle.getArea();
+
+console.log(area); // prints 40 instead of 12
+
+
+
+// --------- INHERITANCE : creating objects from other objects for efficiency
+var template = {
+    greet: function() {
+        console.log('Hi!');
+    }
+};
+
+var person = Object.create(template)  // person object now inherited template object's methods.
+person.greet() // prints    Hi!
+
+// inheritance only lets the new object (person above) borrow the parent's method, it doesn't actually contain it.
+
+// if want an object to truly have methods (or any properties), need to set them directly.
+var car = {
+    startEngine: function() {
+        console.log('vroom vroom');
+    }
+};
+
+var hybrid = Object.create(car);
+
+hybrid.charge = function() {
+    console.log('Using fuel to charge battery')
+} // now the hybrid can charge with its new, owned method
+hybrid.startEngine();
+hybrid.charge();
+
+
+
+//================ABSTRACTION
+//abstraction is what we do in OOP to avoid interacting with too many low-level functionalities. Do this by
+//implementing a few core functions/methods that handle all low-level work. also lets other devs use our class
+//without needing to know how everything works. also introduces fewer potential bugs from user error.
+
+class Car {
+    constructor() {
+        this.on = false;
+    }
+    injectFuel() {
+        console.log('spraying fuel');
+    }
+    igniteFuel() {
+        console.log('Boom!')
+    }
+    startUp() {
+        this.on = true;
+        while (this.on) {
+            this.injectFuel();
+            this.igniteFuel();
+        }
+    }
+}
+
+// calling the correct core method to handle low-level functionalithy of changing slides after displaying them:
+class Slideshow {
+    constructor(slides) {
+        this.slides = slides;
+        this.current = 1;
+    }
+    viewNextSlide() {
+        this.current++;
+    }
+    play() {
+        while (this.current <= this.slides) {
+            console.log('Slide ' + this.current);
+            this.viewNextSlide();
+        }
+    }
+}
+
+var slideshow = new Slideshow(5);
+slideshow.play();  // prints slide 1   slide 2    slide 3 etc on each line
+
+
+
+// ============ POLYMORPHISM - giving different behavior to the same method call across objects via override ======
+class Car {
+    alertOpenDoor() {
+        console.log('Close 4 doors!');
+    }
+}
+
+var coupe = new Car();
+
+coupe.alertOpenDoor = function () {
+    console.log('Close 2 doors');
+};
+
+coupe.alertOpenDoor();
+
+// polymorphism can also be done with subclasses
+class Car {
+    lockDoors() {
+        console.log('locking 4 doors');
+    }
+}
+
+class Coupe extends Car {
+    lockDoors() {
+        console.log('locking 2 doors!');
+    }
+}
+
+var coupe = new Coupe();
+coupe.lockDoors();
+
+// polymorphism done in an instance:
+class Person {
+    greet() {
+        console.log('Hello!')
+    }
+}
+
+class Professor extends Person {
+    greet() {
+        console.log('Salutations!');
+    }
+}
+
+var professor = new Professor();
+professor.greet = function() {
+    console.log('Good news, everyone!');
+}
+professor.greet(); // prints   Good news, everyone
