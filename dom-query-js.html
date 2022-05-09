@@ -25,24 +25,46 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+
+<button id="btn1"></button>
+
+<button id="btn2"></button>
+
+<button id="btn3"></button>
+
+<button id="btn4"></button>
+
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         let mainHeader = document.getElementById('main-header');
-        console.log(mainHeader);
+        // console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         console.log(mainHeader.innerHTML);
-        mainHeader.innerHTML = "Javascript is Cool";
+        // mainHeader.innerHTML = "Javascript is Cool";
         console.log(mainHeader.innerHTML);
+
+        var button1 = document.getElementById("btn1");
+        var listener1 = function (event) {
+            var makeCool = mainHeader.innerHTML = "Javascript is Cool"
+        }
+
+        button1.addEventListener("click", listener1)
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
         console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        // subHeader.style.color = 'blue';
+
+        var button2 = document.getElementById("btn2");
+        var listener2 = function (event) {
+            var turnBlue = mainHeader.style.color = "blue"
+        }
+        button2.addEventListener("click", listener2)
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
@@ -57,14 +79,20 @@
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
-        var dbId1 = listItems[0]
-        dbId1.style.color = "blue"
-        //walkthrough with for loop example:
-        for (var j = 0; j < listItems.length; j++) {
-            if (listItems[j].getAttribute("data-dbid") === '1') {
-                listItems[j].style.color = 'blue';
-            }
+        // var dbId1 = listItems[0]
+        // dbId1.style.color = "blue"
+        // //walkthrough with for loop example:
+        // for (var j = 0; j < listItems.length; j++) {
+        //     if (listItems[j].getAttribute("data-dbid") === '1') {
+        //         listItems[j].style.color = 'blue';
+        //     }
+        // }
+
+        var button3 = document.getElementById("btn3");
+        var listener3 = function (event) {
+            var makeLiBlue = listItems[0].style.color = "blue"
         }
+        button3.addEventListener("click", listener3)
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
@@ -72,7 +100,14 @@
         console.log(subParagraphs)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished!"
+        // subParagraphs[0].innerHTML = "Mission Accomplished!"
+
+        var button4 = document.getElementById("btn4");
+        var listener4 = function (event) {
+            var accomplish = subParagraphs[0].innerHTML = "Mission Accomplished!"
+        }
+        button4.addEventListener("click", listener4)
+
     })();
 </script>
 </body>
