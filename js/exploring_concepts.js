@@ -373,3 +373,61 @@ professor.greet = function() {
     console.log('Good news, everyone!');
 }
 professor.greet(); // prints   Good news, everyone
+
+
+
+
+// =============== Integrating JS in HTML
+
+//access the text of p element via assigning a variable and .innerHTML
+var element = document.getElementById('messages');
+console.log(element.innerHTML) // output:   New Messages (or whatever content displayed between tags)
+
+element.innerHTML = "no messages" // updates page content to display   No Messages
+
+//create an element with document.createElement() passing the element name in quotes
+var paragraph = document.createElement("p")
+//put content in the new element with a value between quotes after an assignment operator
+paragraph.innerHTML = "content to display in the p"
+
+// NESTING ELEMENTS
+//nest a child p element inside the parent body element just created via .appendChild() method call on the parent
+var bodyElement = document.getElementById("parent");
+var paragraph = document.createElement("p")
+paragraph.innerHTML = "content to display in the p"
+//put the paragraph variable in the parenthesis of appendChild() to make it a child
+bodyElement.appendChild(paragraph)
+
+//REMOVE ELEMENTS
+//first, code IDs to the element to be removed and to its parent.
+// <body id="parent"
+//     <h2>Facebook</h2>
+//     <p id="child">Meg: Movie later? </p>
+//then, in the <script>, after assigning variables to each element, access the parent and child with getElementById
+
+    var bodyElement = document.getElementById("parent");
+    var paragraph = document.getElementById("child");
+
+    // remove the p element from the body with removeChild, passing the variable holding the child to be removed
+bodyElement.removeChild(paragraph);
+
+//==== SOURCING/INCLUDING .JS FILES INTO HTML
+//when srcing/including external script file instead of adding js directly to the html, code 'document' in
+// a console.log on the .js file to make the console show the html code printed out
+console.log(document);// prints  [object HTMLDocument]  *the document object stores the content and tags of the page*
+
+//--- more interacting:
+//Buttons.   Without additional info, a button tag is useless. To react to clicks, a button tag needs the
+//onclick attribute
+<button onClick="">Click me</button>
+// the onclick attribute can call functions from an included script when a visitor clicks on the button
+<button onClick="sayHello()">Click me</button>
+
+//can make the sayHello function change the content of an element (e.g. a paragraph) when a user clicks on the button.
+function sayHello() {
+    document.getElementById("prompt").innerHTML = "here, new content!"
+};
+//or make the button order an item
+function orderItem() {
+    document.getElementById("prompt").innerHTML = "Item ordered!"
+}; // *with <button onclick="orderItem()">Order item</button>   <p id="prompt"></p>
