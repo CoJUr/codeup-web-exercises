@@ -475,7 +475,12 @@ function signUp() {
 }
 
 
-
+//        HTML TREE STRUCTURE
+/* <!doctype html>              html  <-- 'the root node'
+    <html>                      body
+   </html>                   h1      p  <--- 'element nodes'
+                                    text  <---'text nodes' (even though no < and >). any text on the page
+ */
 // ---- finding elements by location in the html document --------
 console.log(document.body.firstElementChild.innerHTML) //prints content of h1 or whatever is the body's 1st child
 
