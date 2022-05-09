@@ -607,4 +607,20 @@ p.innerText = linkStyles //displays each key value pair on the page (color: red;
 
 //document.querySelector("p").innerText = imageStyle     another syntax option
 
+//SET ATTRIBUTES - an image src attribute in this feature. syntax: setAttribute("attribute", "new value")
+function changeImage() {
+    var ell = document.querySelector("img");
+    ell.setAttribute("src", "https://blahblah.app/r/cats.pngs");
+    //peak at it with a console log this time just to check, using GET Attribute
+    console.log(ell.getAttribute("src"))
+}
 
+//change input type attribute this time
+function changeType() {
+    var yel = document.querySelector("input");
+    yel.setAttribute("type", "range");
+}
+
+//add a placeholder attribute and set its value
+var hij = document.querySelector("input");
+hij.setAttribute("placeholder", "1234")
