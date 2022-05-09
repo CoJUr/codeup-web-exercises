@@ -550,3 +550,61 @@ function addStyleSheet() {
     var op = document.querySelector("link");
     op.href = "style.css";  //previous href value of link tag replaced with style.css
 }
+
+//when changing multi-word properties, have to use camelCase
+function changeColor() {
+    var abc = document.querySelector("p")
+    abc.style.backgroundColor = "#d7465f"
+}
+
+//changing style with JS works no matter if previous style was set inline or through a stylesheet
+function changeStyle {
+    var abcd = document.querySelector("img");
+    abcd.style.borderRadius = "45px";
+}
+// *note html setup:    <button onclick="changeStyle()">Update Profile Design</button>
+
+
+//access and display the p element's background color on the page  (another 'button onclick=' one)
+function showColor() {
+    var xyz = document.querySelector("p");
+    var div = document.querySelector("div")
+    div.innerText = el.style.backgroundColor;
+    //value of applied color (aliceblue) now displayed as text in the div on the page
+}
+
+//make the 1st a element a block element by changing its display value
+function changeLayout() {
+    var el = document.querySelector("a");
+    el.style.display = "block";
+}
+
+//change an image's border style from whats set by the style.css
+function changeStyle() {
+    var changeImg = document.querySelector("img");
+    changeImg.style.border = "5px solid lightGray"
+}
+
+//display an image's source attribute with getAttribute
+function displayAttribute () {
+    var img = document.querySelector("img");
+    var imageLink = img.getAttribute("src")
+    //can take a peak at whats in imageLink to be sure we grabbed the value by putting it in a paragraph of the html
+    var p = document.querySelector('p');
+    p.innerText = imageLink;
+}
+//another ex using a and href
+function displayAttr() {
+    var el = document.querySelector("a");
+    var link = el.getAttribute("href")
+    var p2 = document.querySelector("p");
+    p2.innerText = link // displays http://abcxyz.com/  onclick
+}
+
+//can also grab all the values of an attribute like a style attribute
+var linkStyles = el.getAttribute("style");
+p.innerText = linkStyles //displays each key value pair on the page (color: red; font-size: 12px; etc etc but w/o quotes)
+
+//document.querySelector("p").innerText = imageStyle     another syntax option
+
+

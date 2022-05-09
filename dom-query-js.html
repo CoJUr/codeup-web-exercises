@@ -50,7 +50,6 @@
         var listener1 = function (event) {
             var makeCool = mainHeader.innerHTML = "Javascript is Cool"
         }
-
         button1.addEventListener("click", listener1)
 
         // TODO: Uncomment the next line and get the sub header element by id
@@ -70,6 +69,17 @@
         var listItems = document.getElementsByTagName('li');
         console.log(listItems);
 
+        // walkthrough example
+        // document.getElementById("change-list").addEventListener("click", function(){
+        //     for (var i = 0; i < listItems.length; i++) {
+        //         if (i % 2 === 0) {
+        //             listItems[i].style.color = "grey";
+        //         }
+        //         if (listItems[i].getAttribute("data-dbid") === '1') {
+        //             listItems[i].style.color = 'blue'
+        //         }
+        //     }
+        // })
 
         // TODO: Set text color on every other list item to grey
         for (var i = 0; i < listItems.length; i++) {
@@ -101,6 +111,13 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         // subParagraphs[0].innerHTML = "Mission Accomplished!"
+
+
+        // last one walkthrough example
+        // document.querySelector("#change-subp").addEventListener("click", function() {
+        //     subParagraphs[0].innerText = "mission accomplished"
+        // })
+
 
         var button4 = document.getElementById("btn4");
         var listener4 = function (event) {
