@@ -484,3 +484,42 @@ function signUp() {
 // ---- finding elements by location in the html document --------
 console.log(document.body.firstElementChild.innerHTML) //prints content of h1 or whatever is the body's 1st child
 
+// the keyword document targets the root HTML node
+var htmlRoot = document // typed between the script tags ofc
+
+//can access child nodes of the html node with .head and .body just like calling on object properties
+var theHead = document.head
+var theBody = document.body
+
+//can then update nodes with .innerHTML. here, we remove all page content and replace with the following text
+var theBody = document.body;
+theBody.innerhtml = "where did the page go?"
+
+//to get all children nodes of a node, use .children to return an array of all child nodes in order of appearance
+var bodyChildren = document.body.children
+//then select whichever one you want
+bodyChildren[0].innerHTML = "who changed my heading" //selecting the first child and changing it
+
+//similarly, .children[i] can select any single child
+var probablyP = document.body.children[1]
+
+//can also access the 1st child node directly with .firstElementChild
+var heading = document.body.firstElementChild;
+heading.innerHTML = "week 13";
+
+//can access nearest sibling of an element node with .nextElementSibling
+var theBody = document.head.nextElementSibling;
+theBody.innerHTML = "page deleted";
+
+//to retrieve individual html elements, use querySelector() method with the element inside the parens
+function publish() {
+    var el = document.querySelector("p");
+    //and then can change it like normal using the variable
+    el.innerHTML = "Website published";
+}
+
+//querySelector() works with all selectors, like tags classes, IDs. use css style of selecting
+document.querySelector(".prompt") // selects element with class="prompt"
+
+//the querySelector only retrieves the first element it finds. two elements with the same class, only grabs the 1st
+
