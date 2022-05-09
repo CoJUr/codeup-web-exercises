@@ -431,3 +431,51 @@ function sayHello() {
 function orderItem() {
     document.getElementById("prompt").innerHTML = "Item ordered!"
 }; // *with <button onclick="orderItem()">Order item</button>   <p id="prompt"></p>
+
+
+
+
+//------- USER INPUT -----
+
+//to access user input from an included script, add .value at the end of a getElement
+var username = document.getElementById("usernameInput").value; //w usernameInput id on <input> element
+// now can use it like any other value
+function register () {
+    var username = document.getElementById("usernameInput").value; // "register()" set to onclick value
+
+    //can now use captured user input to update webpage.
+    document.getElementById("message").innerHTML = username + " , you're signed up!";
+}
+// value of username var now displays on the page (in the p element with id="message") when clicking the button
+console.log(username)
+
+
+//works the same when capturing input from a textarea element
+function addReview () {
+    var review =
+        document.getElementById("reviewText").value;
+    //console.log(review) will print the user entered input
+
+    var addedReview = document.getElementById("addedReview");
+    addedReview.innerHTML = review
+    //now the data captured in the review var is displayed on page using a <p id="addedReview"> when button clicked
+}
+
+//what happens when you set an input element value to an empty string "" ?
+function register() {
+    document.getElementById("usernameInput").value = "";
+}
+// A: it removes the text in the input field and shows the placeholder attribute's value when clicking the button
+
+
+// access the input element (id value of "emailInput") to display its value in the console when clicking signup
+function signUp() {
+    var email = document.getElementById("emailInput").value
+    console.log(email);
+}
+
+
+
+// ---- finding elements by location in the html document --------
+console.log(document.body.firstElementChild.innerHTML) //prints content of h1 or whatever is the body's 1st child
+
