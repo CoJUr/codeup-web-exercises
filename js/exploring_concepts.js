@@ -523,3 +523,30 @@ document.querySelector(".prompt") // selects element with class="prompt"
 
 //the querySelector only retrieves the first element it finds. two elements with the same class, only grabs the 1st
 
+//can access different element of the same class with query selector, same reference style as css
+document.querySelector("p.prompt"); //accesses 1st paragraph of class='prompt'
+
+//to access an element with multiple classes, can reference them all, one after the other
+document.querySelector(".prompt.update")
+
+//----ATTRIBUTES---
+
+//can get elements by attributes and change the attributes. get attribute by adding a '.' followed by attribute name
+var el = document.querySelector("img");
+var paragraph = document.querySelector("p")
+paragraph.innerText = el.src //variable storing the image now put in the paragraph on the page for display
+
+//can update attribute values. place the value inbetween quotes
+el.src = "https://website/image.png"  // image source now updated
+
+//can change type attribute too
+function changeQuestionType() {
+    var le = document.querySelector("input");
+    le.type = "checkbox";     // a whole different input
+}
+
+//can set a whole stylesheet in the same way
+function addStyleSheet() {
+    var op = document.querySelector("link");
+    op.href = "style.css";  //previous href value of link tag replaced with style.css
+}
