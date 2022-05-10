@@ -558,7 +558,7 @@ function changeColor() {
 }
 
 //changing style with JS works no matter if previous style was set inline or through a stylesheet
-function changeStyle {
+function changeStyle() {
     var abcd = document.querySelector("img");
     abcd.style.borderRadius = "45px";
 }
@@ -624,3 +624,136 @@ function changeType() {
 //add a placeholder attribute and set its value
 var hij = document.querySelector("input");
 hij.setAttribute("placeholder", "1234")
+
+
+//CHANGING CLASS WITH setAttribute is problematic because it overrides the previous class
+//better way to change class is with CLASSLIST
+
+
+//to add a new class w/o overriding previous one, add the classList property. can then use it to access the add() method
+function addBold() {
+    var ill = document.querySelector("p")
+    ill.classList.add("bold")  // class we want to add gets passed to add() like "bold"
+}
+
+//remove classes the same way, but with remove()
+function removeBold() {
+    var ill = document.querySelector("p")
+    ill.classList.remove("bold")  // class we want to add gets passed to add() like "bold"
+}
+
+// combining the two ideas, the toggle method can add and take away the class with each button click
+function toggleBold() {
+    var ill = document.querySelector("p")
+    ill.classList.toggle("bold")  // class we want to add gets passed to add() like "bold"
+}
+
+//can add or remove multiple classes at the same time
+function removeClasses() {
+    var gh = document.querySelector("p");
+    gh.classList.remove("highlight", "underline"); // just put a comma between and each class gets quotes
+}
+
+
+
+//---QUERYSELECTOR---
+//querySelectorAll() is very powerful. Lets us do more advanced searches like accessing 2 elements of diff class at once,
+// or even a combo of elements by tag, id, and class as long as each seperated by a comma
+function displayItems() {
+    var el = document.querySelectorAll(".movie, .tech"); //finds class of EITHER movie OR tech, grabs them all
+    var p = document.querySelector('p');
+    p.innerText = el.length
+}
+
+//if want the classes with BOTH things, ommit the comma and space
+var el = document.querySelectorAll (".sports.news");
+
+
+
+// EVENTS
+//a more manageable way of adding events is with event properties, like the .onclick property
+function publish() {
+    prompt.innerText = "website published!";
+}
+var prompt = document.querySelector("p");
+var rel = document.querySelector("button");
+//can call the function (aka event handler) on the event property with an = and the fn name, ommitting the parens
+rel.onclick = publish;
+
+
+//adding more events to elements. changing color of a div when it is clicked
+function changeColor() {
+    item.classList.toggle("pink");
+}
+var item = document.querySelector("div");
+item.onclick = changeColor;
+// with class .item on div in css sheet, default color of skyBlue and class .pink with background-color: pink
+
+//another possible event: double click:
+item.ondblclick = changeColor;
+
+//yet another event: on scrolling through page. onscroll
+function changeOnScroll() {
+    textarea.style.backgroundColor = "aliceBlue";
+}
+
+var textarea = document.querySelector('textarea');
+textarea.onscroll = changeOnScroll;
+
+//this one triggers an event when an input field changes value. onchange property only triggers after change is done
+function updateValue() {
+    log.innerText = input.value;
+}
+var input = document.querySelector('input');
+var log = document.getElementById('log');
+input.onchange = updateValue;
+//empty p tag with id="log" displaying the new text with each updated selected input choice
+
+
+//and this one they call oninput. triggers an event anytime an element input changes at all. even by 1 character
+function updateValue() {
+    log.innerText = input.value.length;
+}
+var input = document.querySelector('input');
+var log = document.getElementById('log');
+input.oninput = updateValue()
+//input and p tags are siblings here
+
+
+//EVENT LISTENER STYLE - the most modern
+//remove event listener method can remove events. add removeEventListener() to the event handler and wrap the element twice
+function changeColor() {
+    item.classList.toggle('pink');
+    item.removeEventListener('click', changeColor);
+}
+var item = document.querySelector('div');
+item.addEventListener('click', changeColor)
+
+//removing elements is useful if want an event to happen only once. just remove the click event from inside
+//the changeColor event handler.
+function changeColor() {
+    item.classList.toggle('pink');
+    item.removeEventListener("click", changeColor);
+}
+var item = document.querySelector('div');
+item.addEventListener("click", changeColor);
+
+
+//can give an element multiple event handlers by adding them 1 by 1 with addEventListener() method
+function changeWidth() {
+    item.classList.toggle('width');
+}
+
+function changeHeight() {
+    item.classList.toggle('height');
+}
+
+var item = document.querySelector('div');
+var el = document.querySelectorAll("button");
+
+el[0].addEventListener("click", changeHeight)
+el[0].addEventListener("click", changeWidth)
+
+ el[1].addEventListener("click", changeHeight)
+el[2].addEventListener("click", changeWidth)
+
