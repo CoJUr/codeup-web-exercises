@@ -18,14 +18,27 @@ example of input: “#00000”, “black”, “#FF00FF
 </p>
 <button id="changeColor"></button>
 
+
+</body>
 <script>
+
     var coloredText = document.getElementById('color')
     var button = document.getElementById('changeColor')
     var listener = function changeColor() {
         coloredText.style.color = "blue";
     }
 
+
     button.addEventListener("click", listener)
+
+
+    var body = document.querySelector("body");
+
+    button.addEventListener("click", function changeColore(e) {
+
+        body.style.backgroundColor = color.value
+    })
+
 
 
 
