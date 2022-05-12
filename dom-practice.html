@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Create an HTML file called dom-practice.html in codeup-web-exercises repos.
+Put a text input on an html page with id of “color”
+Put a button on the page with id of “changeColor”
+Use an Event listener to trigger when the button is clicked.
+Use the value to change the background-color of the page to match the user’s input value.
+
+example of input: “#00000”, “black”, “#FF00FF
+
+<p id="color">
+    Color
+</p>
+<button id="changeColor"></button>
+
+<script>
+    var coloredText = document.getElementById('color')
+    var button = document.getElementById('changeColor')
+    var listener = function changeColor() {
+        coloredText.style.color = "blue";
+    }
+
+    button.addEventListener("click", listener)
+
+
+
+</script>
+
+</body>
+</html>
