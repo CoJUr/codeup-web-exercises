@@ -757,3 +757,58 @@ el[0].addEventListener("click", changeWidth)
  el[1].addEventListener("click", changeHeight)
 el[2].addEventListener("click", changeWidth)
 
+
+//another one
+function markDone() {
+    itemOne.classList.toggle('done');
+}
+var itemOne = document.querySelector('#item-1');
+
+itemOne.addEventListener('click', markDone);
+//** + using linked css style sheet with a .done selector applying text-decoration: line-through  on associated html file
+//with a <li id="item-1">
+
+
+//this one is similar to above, but removes the list item's text from the page
+function removeItem() {
+    itemOne.innerText = "";
+}
+var clearButton = document.querySelector('button');
+var itemOne = document.querySelector('#item-1');
+clearButton.addEventListener('click', removeItem)
+//no css stylesheet needed
+
+
+//more event listeners, this one uses touchstart which is a smartphone/touchscreen event. touchstart logs when users
+//have begun to interact with an element.
+document.getElementById('dog').addEventListener("touchstart", displayMessage);
+
+function displayMessage() {
+    document.getElementById('message').innerHTML = "whooff!";
+}
+//no css needed. <h3 id="message"> with sibling img in a parent container. img barks immediately when clicked/pressed
+
+
+//touchmove, however, checks if user has interacted with an element for a prolonged time. drag finger across the element
+document.getElementById("dog").addEventListener("touchmove", displayMessage);
+
+function displayMessage() {
+    document.getElementById('message').innerHTML = "woof!";
+}
+
+//touchend is just the opposite of touchstart. fires off when user removes finger from the element.
+document.getElementById("dog").addEventListener("touchend", clearMessage);
+
+function clearMessage() {
+    document.getElementById('message').innerHTML = "";
+    //removes displayed message when user lets go
+}
+
+
+//touchcancel checks if the touch event is interrupted. fires when touch turns into drag
+document.getElementById('dog').addEventListener('touchcancel', cancelMessage);
+
+function cancelMessage() {
+document.getElementById('message').innerHTML = "wooof! touch event was interrupted!"
+}
+//run touch start add event here and displayMessage function below it as shown previously
