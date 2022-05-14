@@ -814,7 +814,7 @@ document.getElementById('message').innerHTML = "wooof! touch event was interrupt
 //run touch start add event here and displayMessage function below it as shown previously
 
 
-// setTimeout / clearTimeout  and   clearInterval / setInterval
+// setTimeout / clearTimeout  and   clearInterval / setInterval WINDOW METHODS
 // create a SetTimeout and stop it before it fires off
 let timeoutID;
 
@@ -829,3 +829,13 @@ function clearAlert() {
 }
 delayTimer()
 clearAlert()
+
+//another short intro example from freecodecamp
+//this code is executed first
+console.log("Where can I learn to code for free and get a developer job?");
+// this line indicates that the function definition will be executed once 3s have passed
+setTimeout(codingCourse, 3000);
+//function definition
+function codingCourse() {
+    console.log("freeCodeCamp");
+}
