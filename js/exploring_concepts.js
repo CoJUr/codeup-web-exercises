@@ -812,3 +812,20 @@ function cancelMessage() {
 document.getElementById('message').innerHTML = "wooof! touch event was interrupted!"
 }
 //run touch start add event here and displayMessage function below it as shown previously
+
+
+// setTimeout / clearTimeout  and   clearInterval / setInterval
+// create a SetTimeout and stop it before it fires off
+let timeoutID;
+
+function delayTimer() {
+    timeoutID = setTimeout(delayedFunction, 3000);
+}
+function delayedFunction() {
+    alert("Three seconds elapsed");
+}
+function clearAlert() {
+    clearTimeout(timeoutID, 1000)
+}
+delayTimer()
+clearAlert()
