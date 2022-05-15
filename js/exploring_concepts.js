@@ -882,3 +882,61 @@ Finally, return records.
     //     return records;
     // }
 
+
+// ===========================
+//DOM manipulation: query electorAll
+// If I wanted to find all of the <li> items in our <ul> example,
+//     I could use the > child combinator to find all of the children of the <ul>.
+const listItems = document.querySelectorAll("ul > li");
+console.log(listItems);
+//prints [object NodeList] (4)  an arry of "<li/>"
+
+//to print out the actual content of the <li>'s, can use a forEach() to loop over the nodelist
+const listItems = document.querySelectorAll("ul > li");
+
+listItems.forEach((item) => {
+    console.log(item);
+});
+
+
+
+//ADD NEW ELEMENTS with DOM   document.createElement()
+
+//creating a list of reasons why I love fCC:
+//create a <ul> element and assign it a variable
+let unorderedList = document.createElement("ul")
+//add this element to the document with appendChild()
+document.body.appendChild(unorderedList);
+//next add a couple <li>'s inside the <ul> using createElement() again
+let listItem1 = document.createElement("li");
+let listItem2 = document.createElement("li");
+//then can use textContent to add the text for the list items
+listItem1.textContent = "it's free";
+listItem2.textContent = "it's awesome";
+//finally, use appendChild() to add the <li>'s to the UL
+unorderedList.appendChild(listItem1)
+unorderedList.appendChild(listItem2)
+
+
+
+//------------------ use the style property to change inline css styles (background-color, border-style, font-size etc)
+//change h1 text from black to blue
+// step 1, grab the h1 tag with queryselector()
+const h1 = document.querySelector("h1")
+//then use h1.style.color to change the text color
+h1.style.color = "blue";
+
+
+// ------- using addEventListener()
+//when the use clicks a button, alert message popup
+// in html:    <button id="btn">Show alert</button>   target this element using getElementById and assigning a variable
+const button = document.getElementById("btn")
+//addeventlistener() uses an event param, then a function param which does the triggering of the alert
+//add the event listener to the button variable:
+button.addEventListener("click", () => {
+    alert("thank you for clicking me");
+})
+
+
+
+
