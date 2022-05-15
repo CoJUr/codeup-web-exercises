@@ -839,3 +839,46 @@ setTimeout(codingCourse, 3000);
 function codingCourse() {
     console.log("freeCodeCamp");
 }
+
+//You can also pass further optional parameters to setTimeout(). (besides the mandatory first 2)
+// function greeting(phrase,name) {
+//   console.log(`${phrase}, my name is ${name}` );
+// }
+//
+// setTimeout(greeting, 3000,"Hello world","John Doe");
+
+//another freecodecamp, this time showing clearTimeout() method. have to set the timer to a variable to grab counter/ID.
+let timeoutID = setTimeout(function(){
+    console.log("Good Night");
+}, 2000);
+
+clearTimeout(timeoutID);
+//now the Good Night code won't be executed
+console.log("Good Morning!");
+
+
+//update records problem fCC - Object Maniuplation
+// function updateRecords(records, id, prop, value) {
+//     return records;
+// }
+//
+// updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+/*For the given id parameter, which is associated with the records object:
+* If the value parameter isn’t an empty string, update (or set) the value parameter for the prop parameter.
+* If the prop parameter is equal to "tracks" and the value isn’t an empty string, push the value onto the end of the tracks array.
+* If value is an empty string, delete that prop from the object.
+Finally, return records.
+*/
+    // function updateRecords(records, id, prop, value) {
+    //     if (prop !== 'tracks' && value !== "") {
+    //         records[id][prop] = value;
+    //     } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
+    //         records[id][prop] = [value];
+    //     } else if (prop === "tracks" && value !== "") {
+    //         records[id][prop].push(value);
+    //     } else if (value === "") {
+    //         delete records[id][prop];
+    //     }
+    //     return records;
+    // }
+
