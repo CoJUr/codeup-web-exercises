@@ -29,7 +29,7 @@
 
 <div class="question">
     <h1>Question 2</h1>
-    <input type="text" id="todo" value="stuff">
+    <input type="text" id="todo">
     <button type="button" id="addTodo">Add Todo</button>
     <ul id="todosList">
     </ul>
@@ -99,13 +99,32 @@
     var todoText = document.getElementById('todo')
     var uList = document.getElementById("todosList")
 
-    todoButton.addEventListener("click", listener)
+    todoButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (todoText.value.trim() !== "") {
+            uList.innerHTML += "<li>" + todoText.value + "</li>"
+        }
+            todoText.value = "";
 
-    var listener =function buttonListener() {
-        uList.innerHTML. += "<li>" + todoText.value + "</li>";
+    })
 
-        // uList.value = ""
-    }
+    // var listener = function buttonListener(e) {
+    //     if (todoText.value !== "") {
+    //         uList.innerHTML += "<li>" + todoText.value + "</li>"
+            // } else if (todoText.value === ""){
+            //
+            // }
+
+            // if (todoText.value !== "") {
+            //   var newLi = document.createElement("li").textContent = todoText.value;
+            //     uList.appendChild(newLi);
+            // }
+
+            // uList.innerHTML. += "<li>" + todoText.value + "</li>";
+
+            // uList.value = ""
+    //     }
+    // }
 
     //       b. Reset the value in the addTodos input.
     // 5. If the value for the input is empty. Prevent it from creating another <li> element
@@ -114,7 +133,17 @@
     // Part 1:
     // Every 1 seconds take the H1 tags and change the font size to 10px.
     // If its already 10px set it to 20px;
+    var allHeaders = document.getElementsByTagName("h1")
 
+    setInterval(function (){
+        for (let i = 0; i < allHeaders.length; i++) {
+            if (allHeaders[i].style.fontSize !== "10px") {
+                allHeaders[i].style.fontSize = "10px";
+            } else {
+                allHeaders[i].style.fontSize = "20px";
+            }
+        }
+    }, 1000)
     // var allH1 = document.querySelectorAll('h1')
     // setInterval(function () {
 
