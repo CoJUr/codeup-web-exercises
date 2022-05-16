@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<script>
+
+  //   function handlerFunction() {
+  //
+  //   }
+  //
+  // //vanilla event handler
+  // document.querySelector('#click').addEventListener("click", handlerFunction)
+  //
+  //   //jquery handlers + ON event handler
+  // $('#click').click(handlerFunction)
+  //   $('#click').on('click', handlerFunction)
+
+
+    // create a click handler to display content related to nav bars links. Only display the content currently clicked
+
+  //select a tags that are direct children of li tag which are direct child of ul tag
+
+  var navElements = $('ul > lu > a');
+
+  navElements.click(function(e) {
+      console.log(e.target.href);
+        var href = e.target.href;
+
+        //remove class active from ALL nav elements
+        navElements.get().forEach(function (item) {
+            //loop over elements, remove class from all of them
+            item.classList.remove('active');
+        })
+        //use jquery to get all elements we needed
+      $()
+
+
+        //add the class to the one clicked
+        e.target.classList.add('active');
+
+        //returns jquery elements that wrap the HTML element and so we can use the jquery methods
+        var mouseEvents = $('#mouseEvents').get(0); //turns this into a html element
+        var keyboardEvents = $('#keyboardEvents').get(0);
+
+
+        if (href.includes('keyboardEvents')) {
+            //if see keyboard events
+            //hide all mouse events
+            mouseEvents.classList.add('hide');
+            //show all keyboard events
+            keyboardEvents.classList.remove('hide')
+        } else if (href.includes('mouseEvents')) {
+            mouseEvents.classList.remove('hide')
+            keyboardEvents.classList.add('hide');
+        } else { // all case
+            mouseEvents.classList.remove('hide');
+            keyboardEvents.classList.remove('hide');
+        }
+
+  })
+
+
+  // todo: create double click example
+  //target both mouse and keyboard events
+  $('#mouseEvents, #keyboardEvents').dblclick(function (e) {
+
+  })
+
+</script>
+</body>
+</html>
