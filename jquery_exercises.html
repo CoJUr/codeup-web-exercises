@@ -42,6 +42,9 @@
 <!--<script src="js/custom-js.js"></script>-->
 
 <script>
+    $(document).ready(function() {
+
+
 // $(document).ready(function() {
 
 
@@ -78,28 +81,52 @@
 // ==================== mouse events exercise =============
 
 //1
-$('#heading').click(function () {
-    $('#heading').css('background-color', 'blue')
+// $('#heading').click(function () {
+//     $('#heading').css('background-color', 'blue')
+// })
+//---------walk through:
+$('h1').click(function(e) {
+    e.target.style.backgroundColor = "red";
 })
 
+
 //2
-$('.textholder').dblclick(function () {
-    $('.textholder').css("font-size", '18px')
+// $('.textholder').dblclick(function () {
+//     $('.textholder').css("font-size", '18px')
+// })
+//-------walk thru:
+$('p').dblclick(function(e) {
+    e.target.style.fontSize = "18px";
 })
 
 
 //3
-$('.codeup').hover(
-    function() {
-        $('ul > li').css('color', 'red')
-    },
-    function() {
-        $('ul > li').css('color', '')
-    }
-)
+// $('.codeup').hover(
+//     function() {
+//         $('ul > li').css('color', 'red')
+//     },
+//     function() {
+//         $('ul > li').css('color', '')
+//     }
+// )
+//-----walkthru :
+$('li').hover(hoverIn, hoverOut)
 
 
+function hoverIn (e) {
+    //when in, color red
+    e.target.style.color = 'red';
+}
 
+function hoverOut (e) {
+    //when out, reset to black
+    e.target.style.color = '';
+}
+
+//with "on" instead
+// $('').mouseenter(handlerIn).mouseleave(handlerOut)
+
+    })
 </script>
 
 </body>
