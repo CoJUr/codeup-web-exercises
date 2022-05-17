@@ -999,3 +999,11 @@ for (let i = 0; i < els.length; i++) {
 //jQ
 $('img').width(50);
 //much leaner, plus "cross-browser bugs/inconsistencies" dealt with
+
+//replace the headings using jQuery challenge
+//1st load the jQuery library in 2nd to last script element
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+// //2nd do another script below it for your jquery js commands. do one to change all h1 elements text to "jQuery"
+// <script>
+//     $("h1").text("jQuery");
+// </script>
