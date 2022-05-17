@@ -131,19 +131,23 @@ $(document).ready(function() {
 
 // $('dd').addClass('invisible')
 
-    $('a').click(function(e){
-        e.preventDefault();
-        $('dd').toggleClass('invisible');
-    });
+    // $('a').click(function(e){
+    //     e.preventDefault();
+    //     $('dd').toggleClass('invisible');
+    // });
 
 
-    //bonus
-$("dt").click(function(e) {
-    e.preventDefault();
-    $(this).css('background-color', 'yellow')
+//     //bonus
+// $("dt").click(function(e) {
+//     e.preventDefault();
+//     $(this).css('background-color', 'yellow')
+// })
+
+$('ul').children().last().each(function(index) {
+
+        $(this).css("background", "yellow")
+
 })
-
-
 
 
 
