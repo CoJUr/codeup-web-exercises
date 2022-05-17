@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="">
+
     <title>Konami Code</title>
 
 
@@ -10,18 +10,35 @@
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous"></script>
 
-
+<style>
+    body {
+        background-color: #C6D8D3;
+        padding: 30px;
+    }
+    h1, p {
+        font-family: sans-serif;
+    }
+    h1 {
+        font-size: 76px;
+        color: #5B6361;
+    }
+    p {
+        font-size: 24px;
+        color: #353A39;
+        cursor: pointer;
+        margin-bottom: 3em;
+    }
+</style>
 
 
 
 </head>
 <body>
 
-<h1>Konami Code</h1>
-
-
-
-
+<div id="container">
+    <h1>Konami Code</h1>
+    <p>click here to enter code</p>
+</div>
 
 
 
@@ -30,15 +47,63 @@
     <script>
         "use strict";
 
-        $(document).keyup(function(event){
-            console.log(event.keyCode);
+        let keys = {
+            37: "left",
+            38: "up",
+            39: "right",
+            40: "down",
+            65: "a",
+            66: "b",
+        }
 
+        let konamiCode = ["up", "up", "down", "down", "left", "right", "left", "right", "b", "a",]
 
-            var code = ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter
+        document.addEventListener("keydown", checkCode, false);
 
+        let keyCount = 0;
+        let timerID;
 
+        function checkCode(event) {
+            // console.log(event.keyCode)
+            let keyPressed = keys[event.keyCode]
 
-})
+            if (keyPressed === konamiCode[keyCount]) {
+                keyCount++
+
+                window.clearTimeout(timerID);
+
+                timerID = window.setTimeout(resetKeyState, 1000);
+
+                if (keyCount === konamiCode.length) {
+                    cheatCodeActivated();
+                    resetKeyState();
+                }
+
+            } else {
+                resetKeyState();
+
+            }
+        }
+
+        function cheatCodeActivated() {
+            alert("You have added 30 lives!");
+        }
+
+        function resetKeyState() {
+            console.log("Resetting state")
+            keyCount = 0
+            window.clearTimeout(timerID);
+        }
+
+//         $(document).keyup(function(event){
+//             // console.log(event.keyCode);
+//
+//
+//             var keycode = ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter
+//
+//
+//
+// })
 </script>
 
 
