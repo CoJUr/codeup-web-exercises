@@ -109,7 +109,10 @@ $(document).ready(function() {
 
 
     //bonus
-$("dt").toggleClass()
+$("dt").click(function(e) {
+    e.preventDefault();
+    $(this).css('background-color', 'yellow')
+})
 
 
 
