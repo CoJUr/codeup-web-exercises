@@ -99,7 +99,12 @@ $(document).ready(function() {
 
 
 $('dd').addClass('invisible')
-$('dd').toggleClass('invisible')
+
+    $('dd').click(function(e){
+        e.preventDefault();
+        $('dd').toggleClass('invisible')
+    });
+
 
     //bonus
 $("dt").toggleClass()
