@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+    //keydown
+    $('document').keydown(function (e) {
+        //report values from key to event to page
+        //have access to e.key and e.keycode  -- look at keyboard events in MDN
+        var values = "key: " + e.key + " KeyCode: " } e.keyCode();
+
+        $('#keydownValue').get(0).innerText = values;
+
+    })
+
+    //keyup - no longer pressing the key
+    $('document').keyup(function (e) {
+        var values = "key: " + e.key + " KeyCode: " + e.keyCode();
+
+    $('#keyupValue').get(0).innerText = values;
+    // $('#keyupValue').text(values)   the full jQuery way
+
+    })
+
+    //keypress - the whole event. doesnt track special modifier keys - ctrl, shift, alt, enter
+    $('document').keypress(function (e) {
+        // adding to the end of a string
+        var keyPress = $('#keypressValue')
+
+        keyPress.text(keyPress.text() + e.key)
+    })
+
+
+    // off
+    //can remove one or more event values based on the selector or on the type
+    // document.removeEventListener("click", handlerEvent)
+
+    // $('#keypress').off('click', handlerOut)
+    $(document).off('click') // to remove all of them
+
+    var iskeypressOn = true
+    var isKeyUpOn = true
+            //disable keylogger button
+        $('#buttonContainer > button:nth-of-type(1)').click(function () {
+
+;
+            $(document).off('keypress')
+
+
+        })
+
+
+
+    $('#buttonContainer > button:nth-of-type(2)').click(function() {
+        $(document).off('keyup');
+    })
+    $('#buttonContainer > button:nth-of-type(3)')
+
+
+
+
+</script>
+</body>
+</html>

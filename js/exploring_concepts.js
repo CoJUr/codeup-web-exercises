@@ -939,4 +939,63 @@ button.addEventListener("click", () => {
 
 
 
+//============== WINSTON'S BEARD - khan academy
+var onMouseMove = function(e) {
+    console.log(e);
+    document.getElementById('messageDiv').textContent += "moooove ";
+    var beard = document.createElement('div');
+    beard.className = "beard";
+    document.body.appendChild(beard);
+    beard.style.top = e.clientY + "px";
+    beard.style.left = e.clientX + "px";
+}
 
+// ---- processing forms with events -khan acad
+var onButtonClick = function() {
+    var name = document.getElementById('name').value;
+    var lang = document.getElementById('lang').value;
+    var greeting;
+    if (lang === 'es') {
+        greeting = "hola, " + name;
+    } else if (lang === 'plt') {
+        greeting = "Ello-hay, " + name;
+    } else {
+        greeting = "heyaz, " + name;
+    }
+    document.getElementById('messageDiv').textContent += greeting;
+}
+button.addEventListener('click', onButtonClick)
+
+//----- madlibs - khan acad
+var libButton = document.getElementById('lib button');
+var libIt = function() {
+    var noun = document.getElementById('noun').value;
+    var adjective = document.getElementById('adjective').value;
+    var person = document.getElementById('person').value;
+    var storyDiv = document.getElementById('story');
+    storyDiv.innerHTML = noun + " " + adjective + " " + person;
+}
+libButton.addEventListener('click', libIt)
+
+//------- preventing default behavior of events -- audio autoplay
+//somewhere in body <a id='ohnoes' href='https//www.kasandbox.org/programming-sounds/rpg/giant-no.mp3'>what does?</a>
+var ohnoesEl = document.getElementById('ohnoes');
+var onOhNoesClick = function(e) {
+    e.preventDefault(); //prevents browser from navigating to page - just plays sound instead
+    var audioEl = document.createElement('audio');
+    audioEl.src = 'https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3';
+    audioEl.autoplay = "true";
+    document.body.appendChild(audioEl);
+}
+ohnoesEl.addEventListener('click', onOhNoesClick)
+
+// -----resize pics - khan acad    JS vs jQuery
+//js:
+var els = document.getElementsByTagNameNS('img');
+for (let i = 0; i < els.length; i++) {
+    els[i].style.width = '50px'
+} // the 4 pics are now resized
+
+//jQ
+$('img').width(50);
+//much leaner, plus "cross-browser bugs/inconsistencies" dealt with
