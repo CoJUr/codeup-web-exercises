@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to Ajax</title>
+</head>
+<body>
+<section id="murals-info">
+    <p>I want to know about murals</p>
+</section>
+
+
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossOrigin="anonymous"></script>
+
+
+<script>
+    $.ajax("/data/murals.json").done(function(data){
+        console.log(data);
+    });
+</script>
+</body>
+</html>
