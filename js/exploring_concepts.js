@@ -1007,3 +1007,26 @@ $('img').width(50);
 // <script>
 //     $("h1").text("jQuery");
 // </script>
+
+
+
+//can turn a jquery collection object into a DOM node
+var $heading = $("#someId")
+var headingD = $heading[0] //treat it like an array and presto change-o
+
+//in reverse - DOM node to jquery collection
+var $headerJ = $(headingD)
+//can utilize the above when using a for loop to iterate over a jquery collection. iterating with a for loop will
+//turn the element[i] into a dom node, so turn it back with a $(element) manuever.
+var $paragraphs = $('p');
+for (let i = 0; i < $paragraphs.length; i++) {
+    var element = $paragraphs[i] // DOM node now
+    var $paragraph = $(element) //presto change-o
+    $paragraph.html( $paragraph.html() + "...huzzah!") // now all paragraphs are appended with huzzah
+}
+
+//same thing with a .each
+$paragraphs.each(function(index, element) {
+    var $paragraph = $(element);  //can do $(this) instead of $(element), same thing
+    $paragraph.html( $paragraph.html() + " ... shazzam!") // now both hazzah and shazzam appended
+})
