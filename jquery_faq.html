@@ -152,14 +152,25 @@ $(document).ready(function() {
 // });
 // var button1 = document.getElementById('makeYellow')
 
-$('#makeYellow').click(function (e){
-    $('li').each(function (index, element) {
-        if (index % 4 === 1) {
-            $(this).next().next().css('background', 'yellow');
-        }
-    });
-})
+// $('#makeYellow').click(function (e){
+//     $('li').each(function (index, element) {
+//         if (index % 4 === 1) {
+//             $(this).next().next().css('background', 'yellow');
+//         }
+//     });
+// })
+                    //walk through
+                    $('button').on('click', function(e) {
+                        $('ul').each(function (index) {
+                            $(this).children().last().css('background', 'yellow')
+                        })
+                    });
 
+
+            //     //alfredo's walkthrough
+            // $("button").click(function (){
+            //   $("li:last-child").css("background-color", "yellow");
+            //  });
 
     // $('ul').children().last().css('background', 'yellow').parent().prev()
     //     .prev().children().last().css('background', 'yellow')
@@ -167,7 +178,29 @@ $('#makeYellow').click(function (e){
 
 
 
+//4. when any h3 is clicked, Lis underneath should be bolded with font-weight: bold
 
+    $('h3').on('click', function() {
+        $(this).next().children('li').css('font-weight', 'bold');
+        //if wanted to get the html, have to .each them and get each childs html individually
+        // $(this).next().children('li').each(function () {
+        //     console.log($(this).html())
+        // })
+    })
+
+    //if wanted to get the html, have to .each them
+
+//5. when any LI is clicked, the first LI of the parent ul should have a font color of blue
+//     $('li').on('click', function() {
+//         // $(this).parent().children().first().css('color', 'blue')
+//         $(this).siblings().first().css('color', 'blue')
+//     })
+
+
+    //Leo's example with pseudo selector. only issue is it highlights all 1st child LIs with one click.
+    $("li").click(function () {
+        $("li:first-child").css("color", "blue")
+    })
 
 });
 </script>
