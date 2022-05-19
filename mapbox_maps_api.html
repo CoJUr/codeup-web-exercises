@@ -58,9 +58,15 @@
     geocode("849 E Commerce St Ste #393, San Antonio, TX 78205", MAPBOX_API_TOKEN).then(function(result) {
         console.log(result);
         map.setCenter(result);
-        map.setZoom(15);
+        map.setZoom(18);
     });
 
+    let fogoMarker = new mapboxgl.Marker()
+        .setLngLat([-98.485355, 29.42362])
+        .addTo(map);
+
+    let fogoPopup = new mapboxgl.Popup().setHTML('<p>Fogo de Chao</p>');
+    fogoMarker.setPopup(fogoPopup);
 
 </script>
 </body>
