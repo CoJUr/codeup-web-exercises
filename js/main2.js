@@ -6,12 +6,22 @@ btn.addEventListener('click', function () {
     var ourRequest = new XMLHttpRequest();   // this tool is grabbing AJAX and not XML data (nowadays)
     ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + pageCounter + '.json')
     ourRequest.onload = function() {
+        if (ourRequest.status >= 200 && ourRequest.status < 400) { //this would mean data retrieval successful, so execute the JSON parse
+            var ourData = JSON.parse(ourRequest.responseText)
+            renderHTML(ourData)
+        } else { //handle the error in this contingency. ran into error AFTER CONNECTED TO THE URL
+            console.log("we connected to the server, but it returned an error")
+        }
         // console.log(ourRequest.responseText)
-        var ourData = JSON.parse(ourRequest.responseText) //now the browser knows to expect JSON data instead of a string
-        renderHTML(ourData)
-
+        // var ourData = JSON.parse(ourRequest.responseText) //now the browser knows to expect JSON data instead of a string
+        // renderHTML(ourData)
 
     };
+
+    ourRequest.onerror = function() {
+        console.log("connection error")
+    }
+
     ourRequest.send()
     pageCounter++
     if (pageCounter > 3) {
