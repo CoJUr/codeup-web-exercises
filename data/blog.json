@@ -16,5 +16,13 @@
             "sugar"
         ],
         "date": "February 14, 2015"
+    },
+    {
+        "title": "My Third Blog Post",
+        "content": "The earth was created in six days. And on the seventh day mankind shall rest IN PEACE! ",
+        "categories": [
+            "MORTAL KOMBAT!!!"
+        ],
+        "date": "September 15, 2020"
     }
 ]
