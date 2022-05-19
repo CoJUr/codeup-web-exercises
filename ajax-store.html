@@ -21,28 +21,59 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<button id="btn">Click to Update</button>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
 
 <script>
     (function () {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        $.ajax("/data/inventory.json").done(function (data) {
-            data.forEach(function (inventory) {
-                $('#products').append('<tr>' + '<th>' + inventory.title + '</th>' + '<th>' + inventory.quantity
-                    + '</th>' + "<th>" + inventory.price + "</th>" + "<th>" + inventory.categories + "</th>"
-                    + '</tr>');
+        function theRequest() {
+            $.ajax("/data/inventory.json").done(function (data) {
+                $("#insertProducts").html("");  //this prevents the page from duplicating the rows with each button press
+                data.forEach(function (inventory) {
+                    $('#products').append('<tr>' + '<th>' + inventory.title + '</th>' + '<th>' + inventory.quantity
+                        + '</th>' + "<th>" + inventory.price + "</th>" + "<th>" + inventory.categories + "</th>"
+                        + '</tr>');
+
+                });
 
             });
+        }
+        // $.ajax("/data/inventory.json").done(function (data) {
+        //     data.forEach(function (inventory) {
+        //         $('#products').append('<tr>' + '<th>' + inventory.title + '</th>' + '<th>' + inventory.quantity
+        //             + '</th>' + "<th>" + inventory.price + "</th>" + "<th>" + inventory.categories + "</th>"
+        //             + '</tr>');
+        //
+        //     });
+        //
+        // });
 
-        });
+        var btn = document.getElementById("btn")
 
+        btn.addEventListener('click', theRequest )
+
+        // //walkthrough:
+        // $.get("/data/inventory.json").done(function(data){
+        //     data.forEach(function(tool){
+        //         $("insertProducts").append(
+        //             "<tr>" + "<td>"
+        //             + tool.title + "</td>" +
+        //             "<td>" + tool.quantity + "</td>"
+        //             + "<td>" + tool.price + "</td>"
+        //             + "<td>" + tool.categories.join(", ") + "</td>"
+        //             + "</tr>"
+        //         )
+        //     })
+        // })
         // $.get('https://pokeapi.co/api/v2/pokemon/charmander').done(function (data) {
         //     console.log(data);
         // });
         // TODO: Take the data from inventory.json and append it to the products table
+
+
 
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
