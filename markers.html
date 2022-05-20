@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/keys.js"></script>
+<!--    <meta name="viewport" content="initial-scale=1,maximum-scale=1, user-scaleable=none">-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        #map {
+            width: 50%;
+            height: 400px;
+        }
+        .marker {
+            background-image: url(images/mapbox-icon.png);
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map' style='' class="mx-auto mt-5"></div>
+
+<script>
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/cju711/cl3dxumgz008g14qu8fvzxpk3', // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+
+    var geojson = {
+        type: 'FeatureCollection',
+        features:[{
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [-77.032, 38.913]
+            },
+            properties: {
+                title: 'Mapbox',
+                description: 'Washington, D.C.'
+            }
+        },
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-122.414, 37.776]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'San Francisco, California'
+                }
+
+            }]
+    };
+
+    //add markers to map
+    geojson.features.forEach(function(marker) {
+
+        //create a html element for each feature
+    var el = document.createElement('div')
+        el.className = 'marker';
+
+    //make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(
+                new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(
+                        '<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'
+                    )
+            )
+            .addTo(map);
+
+    })
+</script>
+
+
+
+</body>
+</html>
