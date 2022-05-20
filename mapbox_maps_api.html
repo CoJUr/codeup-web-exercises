@@ -55,11 +55,19 @@
     });
 
     //
-    geocode("849 E Commerce St Ste #393, San Antonio, TX 78205", MAPBOX_API_TOKEN).then(function(result) {
+    geocode("107 W. 6th Street, Austin TX 78701", MAPBOX_API_TOKEN).then(function(result) {
         console.log(result);
         map.setCenter(result);
         map.setZoom(18);
     });
+
+    let ruthMarker = new mapboxgl.Marker()
+        .setLngLat([-97.743365, 30.267855])
+        .addTo(map)
+
+    let benihanaMarker = new mapboxgl.Marker()
+    .setLngLat([-97.74465, 30.26634])
+    .addTo(map)
 
     let fogoMarker = new mapboxgl.Marker()
         .setLngLat([-98.485355, 29.42362])
@@ -67,6 +75,81 @@
 
     let fogoPopup = new mapboxgl.Popup().setHTML('<p>Fogo de Chao</p>');
     fogoMarker.setPopup(fogoPopup);
+
+    let benihanaPopup = new mapboxgl.Popup().setHTML('<p>Benihana</p>');
+    benihanaMarker.setPopup(benihanaPopup);
+
+    let ruthPopup = new mapboxgl.Popup().setHTML("<p>Ruth's Chris</p>");
+    ruthMarker.setPopup(ruthPopup);
+
+
+    // var geojson = {
+    //     type: 'FeatureCollection',
+    //     features:[{
+    //         type: 'Feature',
+    //         geometry: {
+    //             type: 'Point',
+    //             coordinates: [-98.485355, 29.42362]
+    //         },
+    //         properties: {
+    //             title: 'Fogo de Chao',
+    //             description: 'A Brazillian steakhouse. Dinner is served all-you-can-eat-cafe style, but
+    //             the food actually comes to you for added laziness/convenience. Also, the wait staff
+    //             are entirely 100% actually people from Brazil, which I'm not sure how I
+    //             should feel about even if it does seem appropriate. 10/10 food, though. Located in San Antonio, TX'
+    //         }
+    //     },
+    //         {
+    //             type: 'Feature',
+    //             geometry: {
+    //                 type: 'Point',
+    //                 coordinates: [-97.74465, 30.26634]
+    //             },
+    //             properties: {
+    //                 title: 'Benihana',
+    //                 description: 'Has Benihana been memed into to hall of shame? Yes. Should you
+    //                 admit publicly that it lives on your favorite restaurants list? No. Is the food good?
+    //                 For the price, it doggone better be. Located in Every City, USA'
+    //             }
+    //
+    //         },
+    //         {
+    //             type: 'Feature',
+    //             geometry: {
+    //                 type: 'Point',
+    //                 coordinates: [-97.743365, 30.267855]
+    //             },
+    //             properties: {
+    //                 title: 'Ruth's Chris Steak House',
+    //                 description: 'Another run-of-the-mill, one-in-ever-zipcode restaurant,
+    //                 Ruth's Chris steakhouse. Like any steak house, the food is expensive.
+    //                 That is also why the food is good. I dare you to find something on the menu I
+    //                 don't like. Just don't ask me to pay.
+    //                 Everywhere, USA'
+    //             }
+    //
+    //         }]
+    // };
+    //
+    // //add markers to map
+    // geojson.features.forEach(function(marker) {
+    //
+    //     //create a html element for each feature
+    //     var el = document.createElement('div')
+    //     el.className = 'marker';
+    //
+    //     //make a marker for each feature and add to the map
+    //     new mapboxgl.Marker(el)
+    //         .setLngLat(marker.geometry.coordinates)
+    //         .setPopup(
+    //             new mapboxgl.Popup({ offset: 25 }) // add popups
+    //                 .setHTML(
+    //                     '<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'
+    //                 )
+    //         )
+    //         .addTo(map);
+    //
+    // })
 
 </script>
 </body>
