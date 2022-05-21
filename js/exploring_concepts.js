@@ -1030,3 +1030,98 @@ $paragraphs.each(function(index, element) {
     var $paragraph = $(element);  //can do $(this) instead of $(element), same thing
     $paragraph.html( $paragraph.html() + " ... shazzam!") // now both hazzah and shazzam appended
 })
+
+
+//===================== JS PROMISES
+
+let p = new Promise((resolve, reject) => {
+    let a = 1 + 2
+    if (a == 2 ) {
+        resolve('success')
+    } else {
+        reject('failed')
+    }
+})
+
+p.then((message) => {
+    console.log('This is in the then ' + message)
+}).catch((message) => {
+    console.log('This is in the catch ' + message)
+})
+//------- callback functions ex. Promises replaced these
+
+const userLeft = false;
+const userWatchingCatMeme = false
+
+function watchTutorialCallback(callback, errorCallback) {
+    if (userLeft) {
+        errorCallback ({
+            name: 'User Left',
+            message: ':('
+        })
+    } else if (userWatchingCatMeme) {
+        errorCallback({
+            name:'User Watching Cat Meme',
+            message: 'WebDevS < Cat'
+        })
+    } else {
+        callback('Thumbs up')
+    }
+}
+
+watchTutorialCallback((message) => {
+    console.log('Success: ' + message)
+}, (error) => {
+    console.log(error.name + ' ' + error.message)
+})
+
+//copy the function, refactor using promises instead of callbacks
+function watchTutorialPromise() {
+    return new Promise((resolve, reject) => {
+        if (userLeft) {
+            reject ({
+                name: 'User Left',
+                message: ':('
+            })
+        } else if (userWatchingCatMeme) {
+            reject({
+                name:'User Watching Cat Meme',
+                message: 'WebDevS < Cat'
+            })
+        } else {
+            resolve('Thumbs up')
+        }
+    })
+}
+
+watchTutorialPromise().then((message) => {
+    console.log('Success: ' + message)
+}).catch((error) => {
+    console.log(error.name + ' ' + error.message)
+})
+//get the exact same output
+
+//-------see what else can be done with promises. create 3 of them.
+const recordVideoOne = new Promise ((resolve, reject) => {
+    resolve('Video 1 recorded')
+})
+
+const recordVideoTwo = new Promise ((resolve, reject) => {
+    resolve('Video 2 Recorded')
+})
+
+const recordVideoThree = new Promise((resolve, reject) => {
+    resolve('Video 3 Recorded')
+})
+//want to run all 3 in parallel so don't have to wait for 1 before starting the other. enter Promise.all
+Promise.all([
+    //pass in the array of all the promises want to run
+    recordVideoOne,
+    recordVideoTwo,
+    recordVideoThree
+]).then((message) => [
+    //message will bring back an array of all the successful messages
+    console.log(messages) //prints:   ["Video 1 Recorded", "Video 2 Recorded", "Video 3 Recorded"]w
+])
+
+//promise.all will run all 3, then it will call the .then and .catch methods depending on if resolve or fail

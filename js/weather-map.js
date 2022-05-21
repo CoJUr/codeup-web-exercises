@@ -1,6 +1,7 @@
 $.get("http://api.openweathermap.org/data/2.5/onecall", {
     APPID: OPEN_WEATHER_APPID,
     lat:    30.266666,
+    name:   "new york",
     lon:   -97.733330,
     units: "imperial"
 }).done(function(data) {

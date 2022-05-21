@@ -23,3 +23,10 @@ button.addEventListener('click', function() {
 
         .catch(error => alert("wrong city name"))
 })
+
+$.get('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=6286f997e626d4af0208815eae8aed27', {
+    APPID: OPEN_WEATHER_APPID,
+    lat:    30.266666,
+    lon:   -97.733330,
+    units: "imperial"
+})
