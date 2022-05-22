@@ -4,6 +4,15 @@ const tempElement = document.querySelector('.temperature-value p')
 const descElement = document.querySelector('.temperature-description p')
 const locationElement = document.querySelector('.location p')
 
+const KELVIN = 273;
+
+const key = "82005d27a116c2880f0fcb866998agit "
+
+
+function getWeather(latitude, longitude) {
+    let api= `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`
+}
+
 function displayWeather() {
 
     iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
@@ -32,13 +41,29 @@ tempElement.addEventListener('click', function() {
     }
 })
 
+function setPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    getWeather(latitude, longitude);
+
+}
+
+
+
+function showError(error) {
+    notification.Element.style.display = "block";
+    notificationElement.innerHTML= `<p> ${error.message} </p>`
+}
+
 
 
 
 if("geolocation" in navigator){
             navigator.geolocation.getCurrentPosition(setPosition, showError)
 }   else{
-             notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation</p>"
+             notificationElement.style.display = "block";
+             notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation</p>";
+
 }
 
 
@@ -54,3 +79,6 @@ const weather = {
 
 
 }
+
+
+http://api.openweathermap.org/data/2.5/weather?lat=  lattiude  &lon=   longitude &appid= 0ebf0e29926cc939f557a936228e1129
