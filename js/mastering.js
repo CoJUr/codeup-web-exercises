@@ -65,3 +65,19 @@ spanHi.classList.toggle('hi3', true)
 
 spanHi.style.backgroundColor = 'red' // have to convert the css property to camelCase
 
+//Sub-queries
+//can do getElementBy on other elements or variables like it was the document
+// var salsMotto = document.getElementById('salsMotto')
+// //find the spans in salsMotto variable
+// var mottoWords = salsMotto.getElementsByTagName('span')
+// //log how many there are
+// console.log(mottoWords.length)
+
+.firstElementChild
+
+.lastElementChild
+
+.nextElementChild / .nextElementSibling
+    .previousElementChild / .previousElementSibling
+    .childNodes
+    .childElementCount
