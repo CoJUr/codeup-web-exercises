@@ -1125,3 +1125,12 @@ Promise.all([
 ])
 
 //promise.all will run all 3, then it will call the .then and .catch methods depending on if resolve or fail
+
+
+//===== destructuring: creating variables
+//
+const places = data.places;
+const reports = data.reports;
+//can instead do
+const { places, reports } = data;
+//variables will automatically get their corresponding value from their key in the object
