@@ -37,6 +37,157 @@
 
 <div></div>
 
+<main class="container">
+    <h2>Weather</h2>
+    <!--results for weather data ---->
+    <div class="weather row gx-2">
+        <div class="col">
+            <div class="card" style="width: 30vw">
+                <h5 id ="date" class="card-title p-2"></h5>
+                <img
+                        src="http://openweathermap.org/img/wn/10d@4x.png"
+                        class="card-img-top"
+                        alt="Weather description"
+                />
+                <div class="card-body">
+                    <h4 id="" class="card-title">Weather highlights</h4>
+                    <p id="current" class="card-text"></p>
+                    <p id="hi-low" class="card-text"></p>
+                    <p id="humid" class="card-text"></p>
+                    <p id="wind" class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="container">
+    <div id='card' class="row align-items-center">
+        <div class="col">
+            <div class="card">
+                <h5 data-date="1" id="date0" class="card-title p-2">Date</h5>
+                <img
+                        src="http://openweathermap.org/img/wn/10d@4x.png"
+                        class="card-img-top"
+                        alt="Weather description"
+                />
+                <div class="card-body">
+                    <h3 data-title="1" id="day0title" class="card-title">Weather</h3>
+                    <p data-title="1" id="day0current" class="card-text"></p>
+                    <p data-hilow="1" id="day0hi-low" class="card-text"></p>
+                    <p data-humid="1" id="day0humid" class="card-text"></p>
+                    <p data-humid="1" id="day0wind" class="card-text"></p>
+                </div>
+            </div>
+            <img
+                    src="http://openweathermap.org/img/wn/10d.png"
+                    alt="demo icon"
+            />-humid="1" id="day0wind" class="card-text"></p>
+        </div>
+    </div>
+    <img
+            src="http://openweathermap.org/img/wn/10d.png"
+            alt="demo icon"
+    />
+    <!--            <span>10d.png</span>-->
+    <!--        </div>-->
+    <!--        <div class="col">-->
+<!--            <span>10d.png</span>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <div class="card" >-->
+<!--                <h5 id ="date1" class="card-title p-2">Date</h5>-->
+<!--                <img-->
+<!--                        src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                        class="card-img-top"-->
+<!--                        alt="Weather description"-->
+<!--                />-->
+<!--                <div class="card-body">-->
+<!--                    <h3 id="day1title" class="card-title">Weather</h3>-->
+<!--                    <p id="current1" class="card-text"></p>-->
+<!--                    <p id="hi-low1" class="card-text"></p>-->
+<!--                    <p id="humid1" class="card-text"></p>-->
+<!--                    <p id="wind1" class="card-text"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <img-->
+<!--                    src="http://openweathermap.org/img/wn/10d@2x.png"-->
+<!--                    alt="demo icon"-->
+<!--            />-->
+<!--            <span>10d@2x.png</span>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <div id="card2" class="card" >-->
+<!--                <h5 class="card-title p-2">Date</h5>-->
+<!--                <img-->
+<!--                        src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                        class="card-img-top"-->
+<!--                        alt="Weather description"-->
+<!--                />-->
+<!--                <div class="card-body">-->
+<!--                    <h3 id="day2title" class="card-title">Weather</h3>-->
+<!--                    <p id="current2" class="card-text"></p>-->
+<!--                    <p id="hi-low2" class="card-text"></p>-->
+<!--                    <p id="humid2" class="card-text"></p>-->
+<!--                    <p id="wind2" class="card-text"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <img-->
+<!--                    src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                    alt="demo icon"-->
+<!--            />-->
+<!--&lt;!&ndash;            <span>10d@4x.png</span>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <div class="card" >-->
+<!--                <h5 class="card-title p-2">Date</h5>-->
+<!--                <img-->
+<!--                        src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                        class="card-img-top"-->
+<!--                        alt="Weather description"-->
+<!--                />-->
+<!--                <div class="card-body">-->
+<!--                    <h3 id="day3title" class="card-title">Weather</h3>-->
+<!--                    <p id="current3" class="card-text"></p>-->
+<!--                    <p id="hi-low3" class="card-text"></p>-->
+<!--                    <p id="humid3" class="card-text"></p>-->
+<!--                    <p id="wind3" class="card-text"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <img-->
+<!--                    src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                    alt="demo icon"-->
+<!--            />-->
+<!--            <span>10d@4x.png</span>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <div class="card" style="width: 15vw">-->
+<!--                <h5 class="card-title p-2">Date</h5>-->
+<!--                <img-->
+<!--                        src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                        class="card-img-top"-->
+<!--                        alt="Weather description"-->
+<!--                />-->
+<!--                <div class="card-body">-->
+<!--                    <h3 id="day4title" class="card-title">Weather</h3>-->
+<!--                    <p id="current4" class="card-text"></p>-->
+<!--                    <p id="hi-low4" class="card-text"></p>-->
+<!--                    <p id="humid4" class="card-text"></p>-->
+<!--                    <p id="wind4" class="card-text"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <img-->
+<!--                    src="http://openweathermap.org/img/wn/10d@4x.png"-->
+<!--                    alt="demo icon"-->
+<!--            />-->
+<!--&lt;!&ndash;            <span>10d@4x.png</span>&ndash;&gt;-->
+<!--        </div>-->
+    </div>
+</footer>
+
+
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
