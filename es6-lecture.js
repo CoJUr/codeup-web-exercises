@@ -250,7 +250,7 @@ let doubleInput = input => input * 2
 
 // ============== Default Parameter Values
 
-Common ES5 approach
+// Common ES5 approach
 let addArgsA = (num1, num2) => {
     if (num1 === undefined) {
         num1 = 2;
@@ -261,17 +261,21 @@ let addArgsA = (num1, num2) => {
     return num1 + num2;
 };
 
-Shorter ES5 approach
+//before es6, need to use the above method to get around calling the function with no arguements
+//otherwise, get undefined
+
+// Shorter ES5 approach
 let addArgsB = (num1, num2) => {
     num1 = num1 || 2;
     num2 = num2 || 2;
     return num1 + num2;
 };
+// same get-around approach
 
-
-Even better ES6 approach
-
+// Even better ES6 approach
 let addArgsC = (num1 = 2, num2 = 2) => num1 + num2;
+//get-around here is by setting the params in the definitions to default values
+
 
 // Test output
 
@@ -314,11 +318,12 @@ console.log(dog.name);
 // ES6 way...
 
 const dog = {
-    breed,
-    age,
-    name,
-    isCute
+    breed, // is property name
+    age,     //   "       "
+    name,    //   "       "
+    isCute   //   "       "
 };
+//properties are the breed, age, name, isCute, with the values evaluated appropriatedly
 //
 console.log(dog.name);
 
@@ -338,8 +343,10 @@ let breed = puppy.breed;
 let age = puppy.age;
 let name = puppy.name;
 let isCute = puppy.isCute;
+//in reverse. Creating variables from the property values of the object
 
-// let { breed, age, name, isCute } = puppy;
+
+let { breed, age, name, isCute } = puppy;
 //
 //
 
@@ -359,21 +366,22 @@ const data = {
     extra: "asdfasd",
     extra1: "sdfsdf"
 }
+//object destructuring within the parameters.
 
 
 function buildWeatherPanel({ hum, temp, pressure }) {
-    // let { hum, temp, pressure } = data;
+    // let { hum, temp, pressure } = data;  // if uncomment here, would be destructuring in the params above
     let { degreesMetric, degreesImperial } = temp;
     return `
         <div class="card">
             <p>${hum[1]}</p>
-            <p>${temp}</p>
+            <p>Metric: ${degreesMetric}, imperial: ${degreesImperial} </p>
             <p>${pressure}</p>
         </div>
     `;
 }
-
-
+//function destructures the object
+// buildWeatherPanel(data)
 
 
 
@@ -388,14 +396,14 @@ let cat2 = cats[1];
 let cat3 = cats[2];
 
 
-console.log(cat1);
-console.log(cat2);
-console.log(cat3);
+console.log(cat1); // cj
+console.log(cat2); // claude
+console.log(cat3); // max
 
 
 // ============== Destructuring Assignment w/ Functions
 
-destructuring...
+// destructuring...
 
 const getArea = ({ height, width }) => height * width;
 
@@ -418,7 +426,7 @@ console.log(getArea(shape));
 console.log(getArea(rectangle1));
 console.log(getArea(rectangle2));
 
-assignment...
+// assignment...
 
 let height = 20;
 let width = 10;
@@ -426,3 +434,4 @@ let width = 10;
 
 
 console.log(getArea({ height, width }));
+//defining an object and passing in the values from 431 and 432
