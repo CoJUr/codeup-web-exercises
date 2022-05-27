@@ -20,27 +20,27 @@ $.get("http://api.openweathermap.org/data/2.5/onecall", {
     for (let i = 0; i <= 4; i++) {
         var cardData = data.daily[i]
         html +=
-        '<div class="col">' +
-            '<div class="card">' +
-               ' <h5 data-date="1" id="date0" class="card-title p-2">Date</h5>' +
-                '<img'
-                    'src="http://openweathermap.org/img/wn/10d@4x.png"'
-                    'class="card-img-top"'
-                    'alt="Weather description"'
-                '/>'
-                '<div class="card-body">'
-                    '<h3 data-title="1" id="day0title" class="card-title">Weather</h3>'
-                    '<p data-title="1" id="day0current" class="card-text"></p>'
-                    '<p data-hilow="1" id="day0hi-low" class="card-text">  </p>'
-                    '<p data-humid="1" id="day0humid" class="card-text"> + "Daily Humidity: " + data.daily[i].humidity + </p>'
-                    '<p data-humid="1" id="day0wind" class="card-text"></p>'
-                '</div>'
-            '</div>'
-            '<img'
-                'src="http://openweathermap.org/img/wn/10d.png"'
-                'alt="demo icon"'
-            '/>-humid="1" id="day0wind" class="card-text"></p>'
-    '</div>'
+        `<div class="col"> 
+            <div class="card"> 
+                <h5 data-date="1" id="date0" class="card-title p-2">Date</h5> 
+                <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    class="card-img-top"
+                    alt="Weather description"
+                >
+                <div class="card-body">
+                    <h3 data-title="1" id="day0title" class="card-title">Weather</h3>
+                    <p data-title="1" id="day0current" class="card-text"></p>
+                    <p data-hilow="1" id="day0hi-low" class="card-text">  </p>
+                    <p data-humid="1" id="day0humid" class="card-text">  Daily Humidity:  ${data.daily[i].humidity}  </p>
+                    <p data-humid="1" id="day0wind" class="card-text"></p>
+                </div>
+            </div>
+            <img
+                src="http://openweathermap.org/img/wn/10d.png"
+                alt="demo icon"
+            /><p>data-humid="1" id="day0wind" class="card-text"></p>
+    </div>`
 
 
        '"<p>" + "<em>" + "Daily High/low: " + data.daily[i].temp.max + " "'
