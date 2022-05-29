@@ -1134,3 +1134,144 @@ const reports = data.reports;
 //can instead do
 const { places, reports } = data;
 //variables will automatically get their corresponding value from their key in the object
+
+//-------using getters and setters (functions) to access an object
+//setting and getting values from an object from within
+//the value passed into the setter function  modifies the objects private variable
+class Thermostat {
+    constructor(fahrenheit) {
+        this.fahrenheit = fahrenheit
+    }
+    get temperature() {
+        return (5/9) * (this.fahrenheit - 32)
+    }
+    set temperature(celsius) {
+        this.fahrenheit = (celsius * 9.0) / 5 + 32
+    }
+}
+const thermos = new Thermostat(76) // setting in fahrenheit
+let temp = thermos.temperature // 24.44 in celsius
+thermos.temperature = 26
+temp = thermos.temperature
+
+// sharing code blocks with export
+//to use a function in multiple JS files, export it :
+export const add = (x, y) => {
+    return x + y
+}
+
+//another option
+const add = (x, y) => {
+    return x + y
+}
+export { add } //can export multiple variables/functions by adding them into the same export statement
+export { add, temp }
+//....
+//    ... importing reusable JS code.
+//import add from the previous math_functions.js file above
+import { add } from './math_functions.js'
+// the ./ part (which stands in for the relative file path) tells the import to look for the file in the same folder as current file
+
+//can import all the contents of a file into another file, assigning it a variable and calling on that variable like its a property
+//and its functions are all property values with import * as syntax. the variable will be an object containing all designated
+//exports
+
+import * as stringFunctions from "./string_functions.js"
+stringFunctions.uppercaseString("hello") // ditto as below
+stringFunctions.lowercaseString("world") //using the lowercaseString function from the imported file locally
+
+
+//=========PROMISES
+//create a JS promise: a promise is a task that, when complete, fulfills or fails. Promise is a constructor, so use 'new' keyword,
+//and give it a function argument with 2 params - resolve and reject which are methods for determining the outcome of the promise.
+const makeServerRequest = new Promise((resolve, reject) => {
+
+});
+//the above promise is forever 'pending'. the resolve and reject params(methods) of the passed in function are used to complete it.
+const myPromise = new Promise((resolve, reject) => {
+    if (condition) {
+        resolve("promise was fulfilled") //passing resolve method a string
+    } else {
+        reject("promise was rejected") // ""      reject          ""
+    }
+})
+
+const aServerRequest = new Promise((resolve, reject) => {
+
+//use responseFromServer to represent a response from the server
+    let responseFromServer;
+
+    if (responseFromServer){
+        resolve("we got data");
+    } else {
+        reject("not recieved");
+    }
+});
+//the 'then' method executes after your promise is fulfilled with 'resolve'. 'result' is the param of its callback fcn.
+aServerRequest.then(result => {
+    console.log(result)
+});
+//result comes from the argument given to the resolve method.
+
+//---catch
+//      is executed immediately after a promise's reject method is called. Syntax:
+myPromise.catch(error => {
+    //error is the argument passed in to the reject method
+});
+
+const makeServerRequest = newPromise((resolve, reject) => {
+
+    let responseFromServer = false; // representing an unsuccessful response
+    if (responseFromServer) {
+        resolve("we got data!")
+    } else {
+        reject("data not gotten!")
+    }
+});
+
+makeServerRequest.then(result => {
+    console.log(result)
+})
+makeServerRequest.catch(error => {
+    console.log(error)
+})
+
+//function programming   input => process => output without any side effects
+
+const prepareTea = () => 'greenTea' //a function which returns a string representing a cup of tea
+
+//make a function that returns an array of strings which each represent a cup of tea
+const getTea = (numOfCups) => {
+    const teaCups = [];
+
+    for (let i = 1; i <= numOfCups; i++) {
+        const teaCup = prepareTea();
+        teaCups.push(teaCup); // push the new cup of tea string into the bucket above the loop
+    }
+    //return the total amount of cups made
+    return teaCups;
+};
+
+//call the getTea function to make 40 cups of tea, and store them in a variable
+const tea4TeamFCC = getTea(40);
+
+//can modify the getTea function to accept a function param, so that it can change the type of tea it makes.
+//functions that take a function as an argument or return a function as a return val are called Higher Order Functions
+//functions passed to or returned from another are referred to as Lambda.
+
+//make 27 cups of green and 13 cups of black tea in two respective variables. the getTea function now also accepts a function param
+const prepareGreenTea = () => 'greenTea'
+const prepareBlackTea = () => 'blackTea'
+
+//given a fncn repping a tea type and # of cups needed, return an array of strings repping one of the tea types
+const getTea = (prepareTea, numOfCups) => {
+    const teaCups = [];
+
+    for (let i = 1; i <= numOfCups; i++) {
+        const teaCup = prepareTea();
+        teaCups.push(teaCup);
+    }
+    return teaCups;
+}
+const tea4GreenTeam = getTea(prepareGreenTea, 27)
+const tea4BlackTeam = getTea(prepareBlackTea, 13)
