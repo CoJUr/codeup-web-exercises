@@ -78,14 +78,84 @@ const menu = [
 
 const sectionCenterEl = document.querySelector('.section-center')
 
-window.addEventListener('DOMContentLoaded', () => {
-    //now can set up a map method, iterate over the items to hydrate the html
-    let displayMenu = menu.map((item) => {
-        console.log(item) // prints each individual object of the array
+//grab filtering buttons
+const filterBtns = document.querySelectorAll('.filter-btn')
 
-        return `<h1>hello world</h1>`
-    })
-    console.log(displayMenu) // prints the return statement 9x in 9 item array
+window.addEventListener('DOMContentLoaded', () => {
+    // //now can set up a map method, iterate over the items to hydrate the html
+    // let displayMenu = menu.map((item) => {
+    //     console.log(item) // prints each individual object of the array
+    //
+    //     return `<article class="menu-item">
+    //     <img src=${item.img} class="photo"
+    //          alt=${item.title} />
+    //     <div class="item-info">
+    //         <header>
+    //             <h4>${item.title}</h4>
+    //             <h4 class="price">${item.price}</h4>
+    //         </header>
+    //         <p class="item-text">${item.desc}</p>
+    //     </div>
+    // </article>`
+    // })
+    // //now join in a string for display. use empty quotes to get rid of commas
+    // displayMenu = displayMenu.join('')
+    // // now append to page on the parent of the article el
+    // sectionCenterEl.innerHTML = displayMenu
+    // console.log(displayMenu) // prints the return statement 9x in 9 item array -- at the end it prints the one long string
+
+
+    //setting up filtering. initially still pass in menu array. load items event.
+    displayMenuItems(menu)
 })
+
+// filter items. reference each button as param, and set event listener
+filterBtns.forEach((btn) => {
+    btn.addEventListener('click', function(e){
+        console.log(e.currentTarget.dataset.id) //logs the data-id values of button clicked
+        const category = e.currentTarget.dataset.id
+        //now filter depending on value of category var
+        //create new array
+        const menuCategory = menu.filter((menuItem) => {
+
+            //return the menu item only if its equal to the value (assigned data-id) in the category var
+            if (menuItem.category === category)
+                return menuItem
+        })
+        console.log(menuCategory);
+        // to display the 'all' id, which has no category in the array, catch-all to display the menu array
+        if(category === 'all') {
+            displayMenuItems(menu)
+        } else {
+            //else display the captured output from the filter
+            displayMenuItems(menuCategory)
+        }
+
+    })
+})
+
+
+
+
+function displayMenuItems(menuItems) {
+    //change menu.map to menuItems.map to iterate over the array being passed in
+    let displayMenu = menuItems.map((item) => {
+        // console.log(item)
+
+        return `<article class="menu-item">
+        <img src=${item.img} class="photo"
+             alt=${item.title} />
+        <div class="item-info">
+            <header>
+                <h4>${item.title}</h4>
+                <h4 class="price">${item.price}</h4>
+            </header>
+            <p class="item-text">${item.desc}</p>
+        </div>
+    </article>`
+    })
+    displayMenu = displayMenu.join('')
+    sectionCenterEl.innerHTML = displayMenu
+}
 
 
