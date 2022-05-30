@@ -242,11 +242,11 @@ Questions
 .minus-icon {
   display: none;
 }
-/*//introducing (via parent element) show text to minus icon as appropriate*/
+/*//introducing (via parent element) show text to minus icon's span's parent's parent as appropriate*/
 .show-text .minus-icon {
   display: inline;
 }
-/*//make plus icon disappear when minus appears*/
+/*//make plus icon disappear when minus appears from applying class .show-text to great parent on*/
 .show-text .plus-icon {
   display: none;
 }
