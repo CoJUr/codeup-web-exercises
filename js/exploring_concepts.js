@@ -1275,3 +1275,49 @@ const getTea = (prepareTea, numOfCups) => {
 }
 const tea4GreenTeam = getTea(prepareGreenTea, 27)
 const tea4BlackTeam = getTea(prepareBlackTea, 13)
+
+
+//=========================ternary operators
+var number = 48
+var print = (number % 2 == 1)
+    ? "this is an odd number"
+    : "this is an even number"
+console.log(print) //prints  this is an odd number
+
+//can be written inside  JSX directly using embedded expressions unlike if/else
+import React from "react";
+import ReactDOM from "react-dom"
+
+const app = () => {
+    var number = 97;
+
+    return (
+        <div>
+            {
+                (number % 2 == 1)
+                ? <p>this is an odd number.</p>
+                : <p>this is an even number</p>
+            }
+        </div>
+    );
+}
+//&& operator in react can also be inline conditional, again inside a {}.
+// No second clause so only use to only consider if truthy and not consider false. simple comparisons
+  const App = (props) => {
+
+      return (
+          <div>
+              <h2>cloth, sink, and below - Household appliances</h2>
+              {
+                  props.loggedIn && //part before && is conditional
+                  <p>Welcome, dear customer!</p> //after && is JSX to render
+                  //if props.loggedIn weren't true, the JSX wouldnt render
+              }
+          </div>
+      );
+  }
+
+  ReactDOM.render(
+      <App loggedIn={true} />
+      document.getElementById('root')
+  )
