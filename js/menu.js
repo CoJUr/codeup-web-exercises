@@ -1,3 +1,8 @@
+//get only unique categories - hardest one
+//iterate over categories, returning buttons
+//ensure to only select buttons when they are available
+
+//items
 const menu = [
     {
         id: 1,
@@ -71,6 +76,14 @@ const menu = [
         img: "/images/item-9.jpeg",
         desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
+    {
+        id: 10,
+        title: "steak dinner",
+        category: "dinner",
+        price: 36.99,
+        img: "/images/item-10.jpeg",
+        desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    }
 ];
 
 //on page load, access the menu array and dynamically populate the items
@@ -78,8 +91,13 @@ const menu = [
 
 const sectionCenterEl = document.querySelector('.section-center')
 
+const containerOfBtns = document.querySelector('.btn-container')
+
 //grab filtering buttons
-const filterBtns = document.querySelectorAll('.filter-btn')
+// const filterBtns = document.querySelectorAll('.filter-btn')
+// console.log (filterBtns)
+// after being dynamically created, cant access and filter them. empty nodelist printed.
+//fix: target them after theyre added to the dom. (moved to line 155)
 
 window.addEventListener('DOMContentLoaded', () => {
     // //now can set up a map method, iterate over the items to hydrate the html
@@ -107,34 +125,86 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //setting up filtering. initially still pass in menu array. load items event.
     displayMenuItems(menu)
+    displayMenuButtons();
+    //get only unique items. step 1 iterate over array. return only categories
+    // const categories = menu.reduce((values, item) => {
+    //     //property (category) value is in the array being built ? push it in if no.
+    //     if (!values.includes(item.category)) {
+    //         values.push(item.category);
+    //     }
+    //     //else, return the array
+    //     return values;
+    // }, ['all']); //starting with 'all' at index[0] because no true all category
+    //
+    // console.log(categories) // logs an array of the category values
+    //
+    // //now that we got the categories, add them with buttons
+    // const categoryBtns = categories.map((category) => {
+    //
+    //     //return the category value wrapped in the html of a button
+    //     return `<button data-id=${category} class="filter-btn"
+    //             type="button">${category}</button>`
+    //
+    // })
+    //     .join("");
+    // console.log(categoryBtns)
+    // //now have the string of html buttons with corresponding data-ids and text
+    //
+    // //target the container for the buttons to hydrate
+    // containerOfBtns.innerHTML = categoryBtns;
+    // //have to move filter buttons here after dynamic refactor step
+    // const filterBtns = document.querySelectorAll('.filter-btn')
+    // filterBtns.forEach((btn) => {
+    //     btn.addEventListener('click', function (e) {
+    //         console.log(e.currentTarget.dataset.id) //logs the data-id values of button clicked
+    //         const category = e.currentTarget.dataset.id
+    //         //now filter depending on value of category var
+    //         //create new array
+    //         const menuCategory = menu.filter((menuItem) => {
+    //
+    //             //return the menu item only if its equal to the value (assigned data-id) in the category var
+    //             if (menuItem.category === category)
+    //                 return menuItem
+    //         })
+    //         console.log(menuCategory);
+    //         // to display the 'all' id, which has no category in the array, catch-all to display the menu array
+    //         if (category === 'all') {
+    //             displayMenuItems(menu)
+    //         } else {
+    //             //else display the captured output from the filter
+    //             displayMenuItems(menuCategory)
+    //         }
+    //
+    //     })
+    // })
 })
+
+
 
 // filter items. reference each button as param, and set event listener
-filterBtns.forEach((btn) => {
-    btn.addEventListener('click', function(e){
-        console.log(e.currentTarget.dataset.id) //logs the data-id values of button clicked
-        const category = e.currentTarget.dataset.id
-        //now filter depending on value of category var
-        //create new array
-        const menuCategory = menu.filter((menuItem) => {
-
-            //return the menu item only if its equal to the value (assigned data-id) in the category var
-            if (menuItem.category === category)
-                return menuItem
-        })
-        console.log(menuCategory);
-        // to display the 'all' id, which has no category in the array, catch-all to display the menu array
-        if(category === 'all') {
-            displayMenuItems(menu)
-        } else {
-            //else display the captured output from the filter
-            displayMenuItems(menuCategory)
-        }
-
-    })
-})
-
-
+// filterBtns.forEach((btn) => {
+//     btn.addEventListener('click', function (e) {
+//         console.log(e.currentTarget.dataset.id) //logs the data-id values of button clicked
+//         const category = e.currentTarget.dataset.id
+//         //now filter depending on value of category var
+//         //create new array
+//         const menuCategory = menu.filter((menuItem) => {
+//
+//             //return the menu item only if its equal to the value (assigned data-id) in the category var
+//             if (menuItem.category === category)
+//                 return menuItem
+//         })
+//         console.log(menuCategory);
+//         // to display the 'all' id, which has no category in the array, catch-all to display the menu array
+//         if (category === 'all') {
+//             displayMenuItems(menu)
+//         } else {
+//             //else display the captured output from the filter
+//             displayMenuItems(menuCategory)
+//         }
+//
+//     })
+// })    MOVED TO LINE 157 AFTER DYNAMIC REFACTOR
 
 
 function displayMenuItems(menuItems) {
@@ -159,3 +229,57 @@ function displayMenuItems(menuItems) {
 }
 
 
+function displayMenuButtons () {
+
+    const categories = menu.reduce((values, item) => {
+        //property (category) value is in the array being built ? push it in if no.
+        if (!values.includes(item.category)) {
+            values.push(item.category);
+        }
+        //else, return the array
+        return values;
+    }, ['all']); //starting with 'all' at index[0] because no true all category
+
+    console.log(categories) // logs an array of the category values
+
+    //now that we got the categories, add them with buttons
+    const categoryBtns = categories.map((category) => {
+
+        //return the category value wrapped in the html of a button
+        return `<button data-id=${category} class="filter-btn"
+                type="button">${category}</button>`
+
+    })
+        .join("");
+    console.log(categoryBtns)
+    //now have the string of html buttons with corresponding data-ids and text
+
+    //target the container for the buttons to hydrate
+    containerOfBtns.innerHTML = categoryBtns;
+    //have to move filter buttons here after dynamic refactor step
+    const filterBtns = document.querySelectorAll('.filter-btn')
+    filterBtns.forEach((btn) => {
+        btn.addEventListener('click', function (e) {
+            console.log(e.currentTarget.dataset.id) //logs the data-id values of button clicked
+            const category = e.currentTarget.dataset.id
+            //now filter depending on value of category var
+            //create new array
+            const menuCategory = menu.filter((menuItem) => {
+
+                //return the menu item only if its equal to the value (assigned data-id) in the category var
+                if (menuItem.category === category)
+                    return menuItem
+            })
+            console.log(menuCategory);
+            // to display the 'all' id, which has no category in the array, catch-all to display the menu array
+            if (category === 'all') {
+                displayMenuItems(menu)
+            } else {
+                //else display the captured output from the filter
+                displayMenuItems(menuCategory)
+            }
+
+        })
+    })
+
+}
