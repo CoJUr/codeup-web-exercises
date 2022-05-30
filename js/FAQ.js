@@ -25,8 +25,7 @@ questions.forEach((question) => {
                 item.classList.remove('show-text')
             }
         })
-
-
+        
         question.classList.toggle('show-text')
     })
 
