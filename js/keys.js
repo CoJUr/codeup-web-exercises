@@ -2,5 +2,5 @@ const MAPBOX_API_TOKEN = "pk.eyJ1IjoiY2p1NzExIiwiYSI6ImNsM2VvenNvZDAwb2Yza2xkYzJ
 
 const OPEN_WEATHER_APPID = '82f6aea84d92b7c1a898fc1f44a74f3b';
 
-const PERSONAL_ACCESS_TOKEN = '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'
+export const PERSONAL_ACCESS_TOKEN = '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'
 
