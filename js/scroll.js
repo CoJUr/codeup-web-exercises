@@ -77,10 +77,16 @@ scrollLinks.forEach((link) => {
         // next, want to get href attribute from current target (clicking) and use it to navigate to specific spot
         const id = e.currentTarget.getAttribute('href').slice(1) //slice chops off the # a href val
         // console.log(id)
-        //now grab the sections which have id attributes by the same names (w/o the #'s ofc)
-        const element = document.getElementById(id) //NOTE: NO QUOTES. i.e. about, services, etc FROM ID VARgit  goes in!
+        //now grab the sections which have id values by the same names as the <a> href attributes (w/o the #'s)
+        const element = document.getElementById(id) //NOTE: NO QUOTES. i.e. about, services, etc FROM ID VAR goes in!
         //now get that element's positions with offsetTop
         let position = element.offsetTop;
-        console.log(position)
+        console.log(position) // prints (would-be) position of the sections on the y axis
+        window.scrollTo({
+            left: 0,
+            top: position,
+        });
+        // now want to close the links bar when navigating on small screen by referencing the linksContainer again
+        linksContainer.style.height = 0;
     });
 });
