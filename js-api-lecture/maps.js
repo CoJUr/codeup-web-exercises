@@ -87,3 +87,16 @@ export const mapButtonsForUpdate = (id,  type='update') => {
   
     `
 }
+
+export const mapUserCreateForm = () => {
+    return createForm = ("create")
+}
+
+export const createForm = (name, data) => {
+return `
+    <form>
+        <button className="confirm delete" value="${id}">Confirm</button>
+        <button className="cancel">Cancel</button>
+    </form>
+`
+}

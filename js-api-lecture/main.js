@@ -1,7 +1,6 @@
 import { mapUserToRecord } from "./maps.js";
 import {baseURL, fetchSettings} from "./constants.js";
 import {handleDisplayUpdate, handleDeleteView, toggleModal, modal, handleDisplayProfile} from "./handlers.js";
-import {users} from "./temp.js";
 
 
 // LECTURE: Restful API's
@@ -38,4 +37,19 @@ import {users} from "./temp.js";
 // Fetching the user from the server and then mapping it to the user record.
 // TODO: Add in Fetch to get the users
 // TODO: Add Handlers to events
+
+fetch(baseURL + "/user", fetchSettings)
+    .then(res => res.json())
+    .then(res => {
+        // console.log(res)
+        //want to map users to page
+        // mapUserToRecord()
+        document.getElementById('users').innerHTML +=
+            res.data.map(mapUserToRecord).join('')
+
+        //event handlers
+        $('.delete').click(handleDeleteView)
+        $('.edit').click(handleDisplayUpdate);
+        $('.user-record').click(handleDisplayProfile)
+    })
 

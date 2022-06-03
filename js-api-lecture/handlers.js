@@ -37,6 +37,18 @@ const handleDoDelete = (event) => {
     // TODO: Delete User by ID
     // TODO: Hide Modal
     // TODO: Reload form
+
+    let settings = {
+        ...fetchSettings,
+        method: "DELETE"
+    }
+
+    fetch(baseURL + "/user/" + event.target.value, fetchSettings)
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+            disableModal();
+        })
 }
 
 
@@ -46,6 +58,18 @@ export const handleDisplayProfile = (event) => {
     toggleModal();
     // TODO: Create fetch to get the profile information
     // TODO: Map info to modal in view.
+
+    fetch(baseURL + "/user/" + event.target.dataset.id, fetchSettings)
+        .then(res => res.json())
+        .then(res => {
+            // console.log(res)
+            modal.main.innerHTML = mapUserToView(res)
+            modal.foot.innerHTML = `<button class="close-modal">Close</button>`
+
+            $('.close-modal').click(() => disableModal());
+
+        })
+
 }
 
 
@@ -54,10 +78,22 @@ export const handleDisplayProfile = (event) => {
 
 // Example: get fetch request
 export const handleDisplayUpdate = (event) => {
-
+    enableModal();
     //TODO: Get Data from user by Id
     //TODO: Map to update form
     //TODO: Add handlers
+
+    fetch(baseURL + "/user/" + event.target.value, fetchSettings)
+        .then(res => res.json())
+        .then(res =>{
+
+            modal.main.innerHTML = mapUserToUpdate(res)
+            modal.foot.innerHTML = mapButtonsForUpdate(res.id)
+
+                $('button.confirm.update').click(handleDoUpdate)
+
+        })
+
 
 };
 
@@ -67,20 +103,53 @@ export const handleDisplayUpdate = (event) => {
 export const handleDoUpdate = (event) => {
     event.preventDefault();
 
+    const form = document.forms.update;
+
+    let data = {
+        id: form.id.value,
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        gender: form.gender.value,
+        dateOfBirth: form.dateOfBirth.value,
+        phone: form.phone.value,
+        picture: form.picture.value
+    }
+
+    let settings = {
+        ...fetchSettings,
+        method: 'PUT',
+        body: JSON.stringify(data)
+    }
+
     // TODO: GET form data
     // TODO: Update the user with the new form data.
     // TODO: hide modal.
+
+    fetch(baseURL + "/user/" + event.target.value, settings)
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+            //todo: use this value to update the field record in the table
+
+            disableModal();
+        })
+
 
 }
 
 const handleCreateUserView = (event) => {
     // TODO: Create form for users to fill out.
+
+    //inputs
+
 }
 
 
 // Example: POST request
 const handleDoCreateUser = () => {
     // TODO: Create a new User!
+
+    //data request to create new user
 }
 
 
@@ -97,6 +166,12 @@ export const toggleModal = () => {
 export const enableModal = () => {
     modal.container.classList.remove("hide")
     modal.all.classList.remove("hide");
+
+}
+
+export const disableModal = () => {
+    modal.container.classList.add("hide")
+    modal.all.classList.add("hide");
 }
 
 
