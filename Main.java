@@ -88,3 +88,73 @@ public class Main {
     }
 
 }                          // output =       I am a Car. \n I have 4 tires.
+
+
+//===== constructors    =====
+public class Main {
+    int a;  //class attribute   variable a
+
+    public Main() {  //construcor for Main
+
+        a = 3 * 3; //initial value for variable a set to 9
+    }
+
+public static void main(String[] args) {
+        //execution starts.  public= globally available method.
+    // static makes method callable by complier without creating an object. if non static, JVM has to instantiate when calling method
+    // void means method returns nothing. the Java program terminates soon as the method does.
+    //main is identifier for JVM to find starting point of the program
+    //String[] args : an array of strings. stores command line arguments.
+
+
+        Main myObj = new Main(); //create an object of the class Main. class constructor called via function
+
+        System.out.println(myObj.a); // prints 9
+}
+
+}
+
+
+//Methods examples
+class Main {
+
+    //create method named divideNumbers taking params x and y
+    public int divideNumbers(int x, int y) {
+        int division = x/y ;
+        //return value
+        return division;
+    }
+
+    public static void main(String[] args) {
+
+        int firstNumber = 4;
+        int secondNumber = 2;
+
+        //create an object of Main
+        Main obj = new Main();
+        //calling method
+        int result = obj.divideNumbers(firstNumber, secondNumber);
+        System.out.println("Dividing " + firstNumber + " by " + secondNumber + " is: " + result);
+
+    }
+
+} //outputs   Dividing 4 by 2 is: 2
+
+
+//O-OP   4 MAIN PRINCIPALS/PILLARS:     ENCAPSULATION    INHERITANCE     ABSTRACTION      POLYMORPHISM
+//ENCAPSULATION and information hiding
+//Encapsulation = wrap your data under a single unit. Prevents access of data from code outside.
+// hide 'sensitive' data by 1) declaring variables/attributes as private and 2) use public get+set methods to access/update a private var
+//information hiding is abt protecting from inadvertent change throughout the program. closely associated w encapsulation.
+public class Student {
+    private String name;   //restricted access
+
+    public String getName() {   //getter
+        return name;
+    }
+
+    public void setName(String newName) { //setter
+        this.name = newName;
+    }
+}
+
