@@ -158,3 +158,39 @@ public class Student {
     }
 }
 
+//INHERITANCE allows classes to inherit attributes + methods of other classes. Uses extends keyword.  subclass(child) superclass(parent)
+//create JerryTheMouse class by inheriting the methods+fields of Animal (super)class
+
+class Animal {
+
+    //field and method of parent
+    String name;
+    punlic void eat() {
+        System.out.println("I can eat");
+    }
+}
+//inherit from Animal
+class JerryTheMouse extends Animal {
+
+    //new method in subclass
+    public void display() {
+        System.out.println('My name is ' + name);
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        //ceate an object of the subclass
+        JerryTheMouse labrador = new JerryTheMouse();
+
+        //access field of superclass
+        mouse.name = "Jerry, the mouse";
+        mouse.display();
+
+        //call method of the super using object of subclass
+        mouse.eat
+    }
+    //output   My name is Jerry  \n  I can eat
+}
