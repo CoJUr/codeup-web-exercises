@@ -1,5 +1,12 @@
 h1, h2, h3, h4, p, li{
     font-family: sans-serif;
+    color: #444;
+
+}
+
+h1, h2, h3 {
+    color: #1098ad;
+
 }
 
 h1 {
@@ -29,13 +36,20 @@ P {
 
 
 
+
 li {
     font-size: 20px;
+    /*color: rgb(244, 179, 63, 0.7);*/
+    /*color: #f4b33f;*/
+    /*color: #0ff;*/
+
+    /*color: rgb(183,183,183);*/
+
 }
+
 
 #copyright {
     font-size: 16px;
-
 }
 
 /*article header p {*/
@@ -54,5 +68,21 @@ li {
 
 .related-posts {
     list-style: none;
+
 }
 
+.main-header {
+    background-color: #f1f1f1;
+}
+
+aside {
+    background-color: #f7f7f7;
+    border-top: 5px solid #1098ad;
+    border-bottom: 5px solid #1098ad;
+
+}
+
+body {
+    /*background-color: blue;*/
+
+}
