@@ -1,5 +1,8 @@
 * {
 
+    margin: 0;
+    padding: 0;
+
 
     /*border-top applies non-inheritance-ly from universal selector to all, unlike via body. still easy to override tho.*/
     /*border-top: 10px solid #1098ad; */
@@ -11,7 +14,34 @@ body {
 
     /*border-top doesnt really get inherited by anything --  not text-related (font-fam/size/weight/style, line-height,
      letter-spacing text-align, text-transform, text-shadow, list-style etc*/
+    /*margin: 0;     ergo margin should go to universal*/
+    /*padding: 0;     ""  padding   ""  ""  "" */
     border-top: 10px solid #1098ad;
+}
+
+.main-header {
+    background-color: #f1f1f1;
+    padding: 20px 40px;
+    margin-bottom: 60px;
+}
+
+
+nav {
+    font-size: 18px;
+}
+
+article {
+    margin-bottom: 60px;
+}
+.post-header {
+    margin-bottom: 40px;
+}
+
+aside {
+    background-color: #f7f7f7;
+    border-top: 5px solid #1098ad;
+    border-bottom: 5px solid #1098ad;
+
 }
 
 h1, h2, h3 {
@@ -27,10 +57,13 @@ h1 {
 
 h2 {
     font-size: 30px;
+    margin-bottom: 30px;
 }
 
 h3 {
     font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 h4{
@@ -42,13 +75,18 @@ h4{
 P {
     font-size: 22px;
     line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-
+ul, ol {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
 
 
 li {
     font-size: 20px;
+    margin-bottom: 10px;
     /*color: rgb(244, 179, 63, 0.7);*/
     /*color: #f4b33f;*/
     /*color: #0ff;*/
@@ -56,6 +94,7 @@ li {
     /*color: rgb(183,183,183);*/
 
 }
+
 
 
 #copyright {
@@ -89,7 +128,7 @@ aside {
     background-color: #f7f7f7;
     border-top: 5px solid #1098ad;
     border-bottom: 5px solid #1098ad;
-
+    padding: 50px 0;
 }
 
 body {
@@ -103,6 +142,8 @@ li:first-child {
 
 li:last-child {
     font-style: italic;
+    margin-bottom: 0;
+
 }
 
 li:nth-child(even) {
