@@ -72,7 +72,7 @@ h1 {
     font-style: italic;
 
 }
-/*PSUEDO ELEMENTS*/
+/*PSUEDO ELEMENTS (are in-line) */
 h1::first-letter {
     font-style: normal;
     margin-right: 5px;
@@ -88,15 +88,43 @@ p::first-line {
 
 /*paragraphs after h3's -   ADJACENT SIBLING (+) */
 h3 + p::first-line {
-    color: orangered;
+    /*color: orangered;*/
+}
+
+h2 {
+    /*background-color: orange;*/
+    position: relative;
+}
+
+h2::after {
+    content: "TOP";
+    background-color: #ffe70e;
+    font-weight: bold;
+    font-size: 16px;
+    color: #444;
+/*    want box model to apply normally if want to give padding
+    solution: in-line block */
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    top: -10px;
+    right: -25px;
+}
+
+h2::before {
+
 }
 /*PSUEDO ELEMENTS*/
 strong {
     /*    height and width dont apply to box model for inline elements,
     and padding & margin only applies horizontally */
 
-
 }
+
+
+
+
+
 
 h2 {
     font-size: 30px;
@@ -242,6 +270,8 @@ a:active {
 
 nav {
     font-size: 18px;
+    text-align: center;
+/*    ^ centers the nav-links horizontally. in-line el solution of text-align on parent container */
 }
 
 .post-img {
@@ -283,3 +313,30 @@ button {
     /*left: 50px;*/
 }
 /*...Smaller Elements END*/
+
+/*.main-header nav a:link{*/
+/*    !* rule of thumb: a more complex css rule overrides a simpler one *!*/
+/*    margin-top: 50px;*/
+/*}*/
+
+
+/*~~~~~~ FLOATS ~~~~~*/
+.author-img {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.author {
+    /*padding-left: 50px;*/
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+}
+
+h1 {
+    float: left;
+}
+
+nav {
+    float: right
+}
