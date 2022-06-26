@@ -1317,7 +1317,25 @@ const app = () => {
       );
   }
 
-  ReactDOM.render(
-      <App loggedIn={true} />
-      document.getElementById('root')
-  )
+  // ReactDOM.render(
+  //     <App loggedIn={true} />
+  //     document.getElementById('root')
+  // )
+
+
+// SQL
+//can order items in descending order with DESC keyword after the column name
+// SELECT *
+// FROM patients
+// ORDER BY age DESC;
+
+//can filter for items satisfying a condition with 'WHERE' keyword
+// SELECT *
+// FROM students
+// WHERE major = 'Biology';
+
+// SELECT *
+// FROM membership
+// WHERE type = 'basic';
+//^desired condition follows WHERE (coulomb = 'desired value' || coulomb = number)
+
