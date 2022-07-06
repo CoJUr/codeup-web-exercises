@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mStore.css">
+</head>
+<body>
+    <h1>Online Store</h1>
+    <img src="/images/30x30.svg" id="basketImage" alt="BASKET IMAGE" onclick="clickCart()">
+
+    <h2 id="itemCounter">0</h2>
+    <p id="orderTotal">TOTAL $</p>
+
+    <div class="product">
+        <img src="/images/48x48.svg" alt="BACKPACK IMAGE">
+        <h3>Backpack</h3>
+        <button onclick="addToCart(backpack)">Add to cart</button>
+    </div>
+
+    <div class="product">
+        <img src="/images/30x30.svg" alt="A CAMERA">
+        <h3>Camera</h3>
+        <button onclick="addToCart(camera)">Add to Cart</button>
+    </div>
+
+    <script src="js/mStore.js"></script>
+</body>
+</html>
