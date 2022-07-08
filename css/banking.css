@@ -1,0 +1,42 @@
+.login-form{
+    /*background-color: red;*/
+    width: 300px;
+    margin: 65px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
+
+
+
+}
+
+h1 {
+    padding: 35px 35px 0 35px;
+    font-weight: 300;
+}
+
+.minus {
+    color: red;
+}
+
+.plus {
+    color: blue;
+}
+
+.content {
+/*background-color: red;*/
+    padding: 12px 5px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    background: #e8e9ec;
+    color: #777;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    outline: 0;
+}
+
