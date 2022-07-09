@@ -30,3 +30,5 @@ text.translate(translation)
 # >>>
 "".join(table.get(c, c) for c in text)
 "it's FrIdAy EvEning..."
+
+# https://codechalleng.es/tips/how-to-swapcase-all-vowels-in-a-text
