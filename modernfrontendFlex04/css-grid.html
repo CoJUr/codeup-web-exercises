@@ -14,7 +14,7 @@
     }
     .el--3 {
       background-color: green;
-      height: 150px;
+      /*height: 150px;*/
     }
     .el--4 {
       background-color: goldenrod;
@@ -41,11 +41,16 @@
 
       /* CSS GRID */
       display: grid;
-      grid-template-columns: 200px 200px 100px 100px;
-      grid-template-rows: 300px 200px;
+      /*grid-template-rows: 300px 200px;*/
+      /*grid-template-columns: 200px 200px 1fr 1fr;*/
+      /*grid-template-columns: repeat(3, 1fr); !*2 explicit rows,   last one "implicit" - i.e. not styled *!*/
+      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-rows: 1fr auto;
+      height: 500px;
       /*gap: 30px;*/
-      column-gap: 30px;
-      row-gap: 60px;
+      column-gap: 10px;
+      row-gap: 40px;
     }
 
     .container--2 {
@@ -60,6 +65,10 @@
       height: 600px;
 
       /* CSS GRID */
+      /* important container properties=  -rows: <track size>   -columns: <track size>   gap: <length>   justify-items: (stretch)    align-items: (stretch)
+             only applies if container > grid , less important =   justify-content: (start)      align-content: (start)
+
+             important ITEMS properties=    grid-column: <start line> / <end line>    grid-row: <start... / end>   justify-self: (stretch)  align-self: (stretch)   */
     }
   </style>
 </head>
