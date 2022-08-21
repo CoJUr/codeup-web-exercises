@@ -53,25 +53,38 @@
             /*justify-content: flex-start;*/
             /*flex-wrap: nowrap;*/
             /*align-content: stretch;*/
-        /* ------- -- ----------------- */
+            /* ------- -- ----------------- */
         }
 
         /*  DEFAULTS: -ITEMS-  */
         /*    align-self: auto;*/
-        /*    flex-grow: 0;*/
-        /*    flex-shrink: 1;*/
-        /*    flex-basis: auto;*/
+        /*    flex-GROW: 0;*/
+        /*    flex-SHRINK: 1;*/
+        /*    flex-BASIS: auto;*/
         /*    flex: 0 1 auto;*/
         /*    order: 0;*/
         /*------------ ---------------*/
+        .el {
+            /*flex-basis: 100px;*/
+            /*flex-shrink: 0;*/
+            /*!*flex-grow: 1;*!   just use flex property (grow > shrink > basis */
+            flex: 1;  /*valid way to set grow alone*/
+
+            /*flex-grow: 0;*/
+            /*flex-shrink: 0;*/
+            /*flex-basis: 200px;*/
+            /*flex: 0 0 200px;*/
+        }
+
         .el--1 {
             align-self: flex-start;
             /*order: 2;*/
+            /*flex-grow: 3;*/
         }
 
         .el--5 {
             align-self: stretch;
-        /*  align-self to over ride align-items */
+            /*  align-self to over ride align-items */
             order: 1;
         }
 
@@ -87,9 +100,9 @@
     <div class="el el--3">CSS</div>
     <div class="el el--4">are</div>
     <div class="el el--5">amazing</div>
-    <div class="el el--6">languages</div>
-    <div class="el el--7">to</div>
-    <div class="el el--8">learn</div>
+<!--    <div class="el el&#45;&#45;6">languages</div>-->
+<!--    <div class="el el&#45;&#45;7">to</div>-->
+<!--    <div class="el el&#45;&#45;8">learn</div>-->
 </div>
 </body>
 </html>
