@@ -421,3 +421,22 @@ has content and display block and clear */
     font-weight: normal;
     font-style: italic;
 }
+
+.row {
+    display: flex;
+    gap: 75px;
+    /*justify-content: space-between;*/
+    align-items: flex-start; /*flex-start aligns items to get rid of stretch*/
+}
+
+
+article {
+    flex: 1; /*flex:1 is equivalent to width: 100%;  (flex-grow) */
+    margin-bottom: 0;
+}
+
+aside {
+/*    flex defaults:   flex-grow: 0     flex-shrink: 1    flex-basis: auto */
+    flex: 0 0 300px;
+
+}
