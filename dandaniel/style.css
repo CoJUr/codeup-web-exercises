@@ -1,0 +1,11 @@
+.body {
+    background-color: lemonchiffon;
+}
+
+.card {
+    height: 290px;
+    width: 300px;
+    border: solid 1px red;
+    display:flex;
+
+}
