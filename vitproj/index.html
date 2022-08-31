@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .postingEls {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 70%;
+            height: 100%;
+        }
+
+        .inputEl {
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            margin: 20px;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #eeecec;
+            font-weight: 400;
+            text-align: center;
+            flex-grow: 2;
+
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 50%;
+            height: 100%;
+        }
+
+        .feed-container {
+            list-style: none;
+            margin: 20px;
+            background-color: #b7b6b6;
+            width: 100%;
+            height: 500px;
+        }
+
+        .post-button {
+            background-color: lightblue;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+
+        .feed-item {
+            background-color: #e8e8ea;
+            margin: 10px;
+            padding: 5px;
+            width: 85%;
+            border: 2px solid black;
+
+        }
+
+        .feed-item:hover {
+            background-color: #d1d1d3;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="main-body">
+    <!--  <textarea>Insert a message</textarea>-->
+    <div class="main">
+
+
+    <div class="postingEls">
+        <input type="text" name="displayName" class="inputEl" id="displayName" placeholder="Insert title here..."/>
+        <button class="post-button" onclick="addTask()">Add</button>
+    </div>
+
+    <button onclick="removeTasks()">Remove All</button>
+    <ul id="dateCol" class="feed-container">
+        <li class="feed-item">Do this</li>
+        <li class="feed-item">Do that</li>
+        <li class="feed-item">Do that also</li>
+    </ul>
+    <!-- Main should contain at minimum: new-post-form, feed-container -->
+</div>
+
+<div id=“main-side”></div>
+<h1></h1>
+<ul>
+    <li><a href=“#”>One</a></li>
+    <li><a href=“#”>Two</a></li>
+    <li><a href=“#”>Three</a></li>
+    <li><a href=“#”>Four</a></li>
+    <li><a href=“#”>Five</a></li>
+</ul>
+
+
+<div id=“footer”>
+    <h2>Thank you for using our services!</h2>
+    <input type=“text” name=“Email” id=“Email”/>
+    <label for=“Email”>Subscribe to our Newsletter: </label>
+    <button onclick=“PushSubscription()“>Subscribe</button>
+</div>
+</div>
+
+
+<script src="js.js"></script>
+</body>
+</html>
+
+
+
+
