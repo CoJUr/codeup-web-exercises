@@ -1,0 +1,14 @@
+/*main color: #087f5b
+grey color: #343a40
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #343a40;
+    line-height: 1;
+}

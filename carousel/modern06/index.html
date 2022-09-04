@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Carousel Component</title>
+    <style>
+        /*
+        Spacing system (px)
+        2 / 4 / 8/ 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+        FONT SIZES (px)
+        10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+        */
+
+        /*main color: #087f5b
+    grey color: #343a40
+    */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #343a40;
+            line-height: 1;
+        }
+
+        img {
+            height: 200px;
+            border-radius: 8px;
+        }
+
+        .carousel {
+            background-color: #087f5b;
+            width: 800px;
+            padding: 32px;
+            margin: 100px auto;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .testimonial-author {
+
+        }
+        .testimonial-job {
+
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="carousel">
+    <img src="maria.jpg" alt="Maria de Almeida" class="src">
+    <blockquote class="testimonial">
+        <p class="testimonial-text">
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Amet, dolorum impedit inventore ipsam iusto maiores quae quia similique ut voluptatibus."
+        </p>
+        <p class="testimonial-author">Maria de Almeida</p>
+        <p class="testimonial-job">Senior project manager EDP comercial</p>
+    </blockquote>
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="btn-icon">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"/>
+        </svg>
+    </button>
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+
+    </button>
+</div>
+
+</body>
+</html>
