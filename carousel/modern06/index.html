@@ -42,14 +42,13 @@
         .carousel {
             background-color: #087f5b;
             width: 800px;
-            padding: 32px;
-            padding-left: 86px;
+            padding: 32px 48px 32px 86px;
             margin: 100px auto;
             border-radius: 8px;
             /*make this the parent for absolute positioned buttons*/
             position: relative;
             display: flex;
-            /*align-items: center;*/
+            align-items: center;
             gap: 86px;
         }
 
@@ -83,6 +82,7 @@
             position: absolute;
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
             /*top: 50%;*/
+            cursor: pointer;
 
         /*    fix icon alignment*/
             display: flex;
@@ -111,6 +111,30 @@
             width: 24px;
             stroke: #087f5b;
             /*    position them absolutely (rel to entire carousel) to get around automatic shrinking from flex */
+        }
+
+        .dots {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 32px);
+
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: white;
+            border: 2px solid #087f5b;
+            border-radius: 50%;
+            cursor: pointer;
+
+        }
+
+        .dot--fill {
+            background-color: #087f5b;
         }
 
 
@@ -144,6 +168,12 @@
         </svg>
 
     </button>
+    <div class="dots">
+        <button class="dot dot--fill">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+    </div>
 </div>
 
 </body>
